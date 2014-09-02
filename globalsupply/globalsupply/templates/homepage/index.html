@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head %} 
+<meta name="description" content="">
+{% endblock%}
+{% block title %}
+globalsupply
+{% endblock%}
+{% block css%}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/adquiridos/back-top.js' %}"></script>
+{% endblock %}
+{% block navi %}
+		<ul>
+			<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a></li>
+			<li class="works"><a href="{% url 'homepageworks' %}">Trabajos</a></li>
+			<li class="services"><a href="{% url 'homepageservices' %}">Servicios</a></li>
+			<li class="contact"><a href="{% url 'homepagecontact' %}">Contacto</a></li>
+		</ul>				
+{% endblock %}
+{% block clear %}{% endblock%}
+{% block contenido %}
+	<section class="bannerPrincipal">
+		<h1>Titulo importante</h1>
+		<div class="wrapper banner1">
+		</div>
+	</section>
+	<section class="ofrecemos">		
+	</section>
+	<section class="aboutus">		
+	</section>
+	<section class="infoContacto">
+	</section>	
+	<!-- BACK TOP BOX -->
+	<div id="back-top" class="back-top">
+		<a href="#home"><span>↑</span>Regresar arriba</a>
+	</div>
+{% endblock%}

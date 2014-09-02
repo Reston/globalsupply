@@ -1,0 +1,81 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--[if lt IE 8]><script type="text/javascript" src="{{ STATIC_URL }}js/adquiridos/ie6-not-supported.js" ></script><![endif]-->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta name="keywords" content="">
+<meta name="author" content="duranjo web c.a.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+{% block head %} {% endblock%}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+<title>{% block title %} {% endblock%}</title>
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+{% block css %}
+{% endblock %}
+{% block js %}
+{% endblock %}
+</head>
+<body>
+	<!-- Analytics SCRIPT GOOGLE! -->
+	<!--<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  //Se debe cambiar esto cuando se haga X página.
+	  ga('create', 'UA-*********-1', '*******.com');
+	  ga('send', 'pageview');
+	</script> -->
+	<header id="home" class="cabecera">
+		<!-- Formulario para cambiar idioma -->
+		<form action="/i18n/setlang/" method="post" style="display: none" id="change_language_form">
+		{% csrf_token %}
+		<input type="hidden" value="" name="language" id="language" />
+		</form>
+
+		{% get_language_info_list for LANGUAGES as languages %}
+		{% for language in languages %}
+			<a href="#" lang_code="{{ language.code }}" class="change_language">{{ language.name_local }} ({{ language.code }})</a> 
+			{% if language.code = 'es' %}
+			<span class="tap">|</span>
+			{% endif %}
+		{% endfor %}
+
+		<script>
+		$(document).ready(function() {
+			$('.change_language').click(function(e){
+				e.preventDefault();
+				$('#language').val($(this).attr('lang_code'));
+				$('#change_language_form').submit();
+			});
+		});
+		</script>
+		<!-- ================================================================================ -->
+		<!-- FIN Formulario para cambiar idioma -->
+		<!-- ================================================================================ -->
+		<div class="wrapper">				
+			<nav class="barraNavegacion">
+				{% block navi %} {% endblock%}
+			</nav>
+		</div>
+	</header>
+	<section class="contenido">
+		{% block contenido %} {% endblock%}
+	</section>
+	{% block clear %} {% endblock %}
+	<footer>
+		{% block footer %}{% endblock%}
+		<div class="wrapper">
+			<div class="footer-der">
+			</div>
+			<div class="footer-izq">
+			</div>		  
+		</div>
+	</footer>
+</body>
+</html>
