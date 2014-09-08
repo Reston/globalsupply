@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+{% load custom_filters %}
+{% block head %} 
+<meta name="description" content="Producto {{producto.titulo}} disponible por la empresa Activa24 C.A.">
+<meta name="msvalidate.01" content="5C0D61EB459CD0F5B9245FEA8F798DAA" />
+{% endblock%}
+{% block title %}
+Producto {{ producto.titulo }} - Activa24 C.A.
+{% endblock%}
+{% block css%}
+<link rel="stylesheet" href="{% static 'css/productos/producto.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+{% endblock %}
+{% block js %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="{% static 'js/adquiridos/jquery.flexslider-min.js' %}"></script>
+{% endblock %}
+{% block navi %}
+		<ul>
+			<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a>
+			<li class="about"><a href="{% url 'homepageabout' %}">Sobre nosotros</a>
+			<li class="services"><a href="{% url 'homepageserviciosyproductos' %}">Productos y Servicios</a>
+			<li class="contact"><a href="{% url 'homapagecontact' %}">Contacto</a>
+		</ul>				
+{% endblock %}
+{% block contenido %}
+<section class="producto">
+	<div class="wrapper">
+		<a class="back-link" href="{{producto.categoria.get_absolute_url}}">«Volver</a>				
+		<section class="cuadro">	
+				<div class="derecha">
+				<div class="sliderimagenes">
+					<div class="flexslider">
+		  				<ul class="slides">
+		  				{% if imagenes %}
+		  				{% for img in imagenes %}
+		  					<li  data-thumb="{{ MEDIA_URL }}/{{img.imagen}}"><img src="{{ MEDIA_URL }}/{{img.imagen}}" alt="{{img.titulo}}"></li>
+		  				{% endfor %}
+		  				{% endif %}
+		  				</ul>
+					</div>		
+				</div>
+				<div class="compartirRedes">
+					<div class="addthis_toolbox addthis_default_style acomodar">
+						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+						<a class="addthis_button_tweet"></a>
+						<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+						<a class="addthis_button_linkedin_counter"></a>
+						<a class="addthis_counter addthis_pill_style"></a>
+					</div>				
+				</div>
+			</div>
+				<div class="izquierda">
+				<h2 class="tituloh2">{{ producto.titulo }}</h2>
+				<div class="codigo">{{ producto.codigo }}</div>	
+				{% if servicio %}
+					<div class="categoria left">Categoria: <a href="#">{{ producto.categoria }}</a></div>
+				{% else %}
+					{% if producto.disponible %}
+						<div class="precio">
+							<div class="preciotext">PRECIO: </div>
+							<div class="numeroprecio">
+							{% for dol in dolar %}
+								{{dol.dolarEnBolivar|getPrecio:producto.precio_dolares}}
+							{% endfor%}Bs.</div>
+						</div><!-- Cambiar esto con un templatetag -->
+
+					<div class="categoria right">Categoria: <a href="#">{{ producto.categoria }}</a></div>
+					{% else %}
+						<h3>Precio: <div class="precioTachado">{{ producto.precio_dolares }} Bs.</div><div class="nodisponible">Producto no disponible</div></h3>
+					<div class="categoria left">Categoria: <a href="#">{{ producto.categoria }}</a></div>						
+					{% endif %}
+				{% endif %}
+					<div class="mini">
+					{{ producto.descripcion_corta }}
+				</div>	
+				<h3>Descripción</h3>
+			{% autoescape off %}
+				{{ producto.descripcion }}
+			{% endautoescape %}				
+				</div>
+	
+		</section>
+		<div class="face">
+		<div class="fb-comments" data-href="http://www.activa24ca.com{{ request.path }}" data-width="960" data-num-posts="10"></div>
+		</div>
+	</div>
+		<!-- SLIDER INIT -->
+	<script>
+		$(window).load(function() {
+  			$('.flexslider').flexslider({
+    			animation: "slide",
+    			controlNav: "thumbnails"
+  			});
+		});
+	</script>
+
+</section>
+		</div>
+<!-- FACEBOOK SCRIPT -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- ADDTHIS script -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
+{% endblock %}

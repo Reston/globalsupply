@@ -13,7 +13,43 @@ Trabajos realizados - Duranjo
 {% block contenido %}
 <section class="quienessomos">
 	<div class="wrapper">
-		<div class="tituloStyle"><h2>libre</h2></div>
+		<!-- Quienes somos -->
+		<div class="somos">
+			<div class="textoDerecha">
+				<h1>{% trans 'Quienes Somos' %}</h1>
+				<div class="texto1">{% trans 'Global supply import & export inc. es una empresa dedicada a la venta de repuestos de excelente calidad para maquinaria pesada como:</div>
+				<div class="repuestosMarcasPesados">
+					<ul>
+						<li>Catterpillar</li>
+						<li>Mack</li>
+						<li>John deere</li>
+					</ul>
+				</div>
+				<div class="texto2">{% trans 'Así como también para vehículos livianos tales como:' %}</div>
+				<div class="repuestosMarcasLivianos">
+					<ul>
+						<li>Toyota</li>
+						<li>Chevrolet</li>
+						<li>Mazda</li>
+						<li>Chrysler</li>
+						<li>Jeep</li>
+						<li>Dodge</li>
+					</ul>
+				</div>
+				<div class="texto3">{% trans 'Contamos con el apoyo incondicional de nuestros proveedores los cuales suplen y dan respuesta de forma inmiediata a nuestras necesidades, para poder curbir la demanda de nuestros clientes, así como también el servicio de delivery hacia el warehouse de su preferencia.' %}</div>
+			</div>
+			<div class="imagenRuta"></div>
+		</div>
+		<!-- Historia -->
+		<div class="historia">
+			<div class="imagenMuestras">
+				<img src="">
+			</div>
+			<div class="textoIzquierda">
+				<h2>{% trans 'Historia' %}</h2>
+				<p>{% trans 'La compañia que hoy es llamada "Global Supply import & export inc" fue creada en el año 2009, luego de estudiar la necesidad existente en el mercado de alguien que fuera capaz de suplir la demanda actual de repuestos de maquinaria pesada y vehículos livianos.' %}</p>
+			</div>
+		</div>
 	</div>
 </section>
 {% endblock%}

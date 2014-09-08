@@ -21,7 +21,7 @@ Contacto - Global Supply
 		{% if success %}
 		<div class="mensajeenviado">
 			<div class="enviado">Su mensaje ha sido enviado correctamente, pronto nos pondremos en contacto con usted.</div>
-			<img class="sobre" src="{{ STATIC_URL }}img/sobre.png" alt="formulario de contacto">	
+			<img class="sobre" src="{% static 'img/sobre.png' %}" alt="formulario de contacto">	
 		</div>
 		{% else %}
 		{% if form.errors %}
@@ -60,11 +60,20 @@ Contacto - Global Supply
 			</div>
 		</form>
 		{% endif %}
-		<div class="tituloStyle">
-			<h2>Información de contacto</h2>
-			<div class="lineatitulo"></div>
-		</div>	
 		<section class="infoContacto">
+			<div class="tituloStyle">
+				<h2>Información de contacto</h2>
+			</div>
+			<div class="redesContacto">
+				<a href="https://twitter.com/*" rel="nofollow"><div class="twitterlogo"></div></a>
+				<a href="https://www.facebook.com/*" rel="nofollow"><div class="facebook"></div></a>
+				<a href="http://instagram.com/*" rel="nofollow"><div class="instagram"></div></a>
+				<a href="https://plus.google.com/+*/" rel="nofollow"><div class="googleplus"></div></a>
+			</div>
+			<div class="mediosContacto">
+				<div class="porTelefono">(305) 848-6244 | (786) 664-5321</div>
+				<div class="porCorreo">info@globalsupplyexport.com</div>
+			</div>
 		</section>
 	</div>
 	</section>

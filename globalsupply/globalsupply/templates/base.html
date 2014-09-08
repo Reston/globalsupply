@@ -32,35 +32,46 @@
 	  ga('send', 'pageview');
 	</script> -->
 	<header id="home" class="cabecera">
-		<!-- Formulario para cambiar idioma -->
-		<form action="/i18n/setlang/" method="post" style="display: none" id="change_language_form">
-		{% csrf_token %}
-		<input type="hidden" value="" name="language" id="language" />
-		</form>
-
-		{% get_language_info_list for LANGUAGES as languages %}
-		{% for language in languages %}
-			<a href="#" lang_code="{{ language.code }}" class="change_language">{{ language.name_local }} ({{ language.code }})</a> 
-			{% if language.code = 'es' %}
-			<span class="tap">|</span>
-			{% endif %}
-		{% endfor %}
-
-		<script>
-		$(document).ready(function() {
-			$('.change_language').click(function(e){
-				e.preventDefault();
-				$('#language').val($(this).attr('lang_code'));
-				$('#change_language_form').submit();
-			});
-		});
-		</script>
-		<!-- ================================================================================ -->
-		<!-- FIN Formulario para cambiar idioma -->
-		<!-- ================================================================================ -->
-		<div class="wrapper">				
+		<div class="barraAzul">
+			<div class="wrapper">
+				<!-- Redes sociales -->
+				<div class="redesSociales">
+					<a href="https://twitter.com/*" rel="nofollow"><div class="twitterlogo"></div></a>
+					<a href="https://www.facebook.com/*" rel="nofollow"><div class="facebook"></div></a>
+					<a href="http://instagram.com/*" rel="nofollow"><div class="instagram"></div></a>
+					<a href="https://plus.google.com/+*/" rel="nofollow"><div class="googleplus"></div></a>
+				</div>
+				<!-- Formulario para cambiar idioma -->
+				<div class="idioma">
+				{% trans 'Idioma:' %}
+				<form action="/i18n/setlang/" method="post" style="display: inline;">{% csrf_token %}
+				    <div style="display: inline;">
+				        <select name="language" onchange="javascript:form.submit()">
+				            {% for lang in LANGUAGES %}
+				                <option value="{{ lang.0 }}"{% ifequal LANGUAGE_CODE lang.0 %} selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+				            {% endfor %}
+				        </select>
+				    </div>
+				</form>
+				</div>
+				<!-- ================================================================================ -->
+				<!-- FIN Formulario para cambiar idioma -->
+				<!-- ================================================================================ -->
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="logo">
+				Logo
+				<img src="">
+			</div>				
 			<nav class="barraNavegacion">
-				{% block navi %} {% endblock%}
+				<ul>
+					<li class="index"><a href="{% url 'homepageindex' %}">{% trans 'Inicio' %}</a></li>
+					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quienes Somos' %}</a></li>
+					<li class="services"><a href="{% url 'productproducts' %}">{% trans 'Productos' %}</a></li>
+					<li class="blog"><a href="/blog">Blog</a></li>
+					<li class="contact"><a href="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</a></li>
+				</ul>
 			</nav>
 		</div>
 	</header>
@@ -71,10 +82,28 @@
 	<footer>
 		{% block footer %}{% endblock%}
 		<div class="wrapper">
+			<div class="navFooter">
+				<ul>
+					<li class="index"><a href="{% url 'homepageindex' %}">{% trans 'Inicio' %}</a></li>
+					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quienes Somos' %}</a></li>
+					<li class="services"><a href="{% url 'productproducts' %}">{% trans 'Productos' %}</a></li>
+					<li class="blog"><a href="/blog">Blog</a></li>
+					<li class="contact"><a href="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</a></li>
+				</ul>
+			</div>	
 			<div class="footer-der">
+				telefono y correo
+			</div>
+			<div class="footer-mid">
+				Logo
 			</div>
 			<div class="footer-izq">
-			</div>		  
+				Redes sociales
+			</div>
+			<div class="footer-abajo">
+				<div class="copyRight">Global Supply © Copyright 2014. Todos los derechos reservados. Developed by: <a href="http://duranjo.com/" rel="nofollow"><img src="http://duranjo.com/static/img/duranjowhite.png" alt="Logo empresa duranjo"></a>
+				</div>
+			</div>	
 		</div>
 	</footer>
 </body>

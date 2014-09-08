@@ -10,18 +10,8 @@ def index(request):
 	return render_to_response('homepage/index.html', context_instance=RequestContext(request))
 
 
-def works(request):
-	mision = "misión de la empresa"
-	vision = "visión de la empresa"
-	ctx = {'mision': mision, 'vision': vision}
-	return render_to_response('homepage/seccionlibre.html', ctx, context_instance=RequestContext(request))
-
-
-def services(request):
-	serv = "El arte de servir"
-	ctx = {'serv': serv}
-	return render_to_response('homepage/quienesomos.html', ctx, context_instance=RequestContext(request))
-
+def about(request):
+	return render_to_response('homepage/quienesomos.html', context_instance=RequestContext(request))
 
 def contact(request):
 	success = False
