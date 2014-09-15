@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load staticfiles %}
 {% block head %} 
 <meta name="description" content="">
@@ -7,7 +8,7 @@
 globalsupply
 {% endblock%}
 {% block css%}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/homepage/index.css' %}">
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -16,14 +17,16 @@ globalsupply
 {% block clear %}{% endblock%}
 {% block contenido %}
 	<section class="bannerPrincipal">
-		<h1>Titulo importante</h1>
+		<h1>{% trans 'Servicio, Confianza y Satisfacción' %}</h1>
 		<div class="wrapper banner1">
 		</div>
 	</section>
-	<section class="emailSubcribe">
-		<label>{% trans 'Subcribir correo:' %}</label>
-		<input>
-		<input type="submit">
+	<section class="emailSuscribir">
+		<div class="wrapper">
+			<label>{% trans 'Subcribir correo:' %}</label>
+			<input>
+			<input type="submit">
+		</div>
 	</section>
 	<section class="productos">
 		<div class="wrapper">
@@ -36,9 +39,23 @@ globalsupply
 			</div>
 			<div class="listaProductos">
 				productos recientes.
-				<ul class="Productos">
+				<ul class="listaItem">
 					<li class="item">
-						<img src="">
+						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
+						<div class="descripItem">
+							<div class="marcaItem">Marca: Toyota</div>
+							<div class="tituloItem">Soporte tras de motor Corolla 2000/2004</div>
+						</div>
+					</li>
+					<li class="item">
+						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
+						<div class="descripItem">
+							<div class="marcaItem">Marca: Toyota</div>
+							<div class="tituloItem">Soporte tras de motor Corolla 2000/2004</div>
+						</div>
+					</li>
+					<li class="item">
+						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
 						<div class="descripItem">
 							<div class="marcaItem">Marca: Toyota</div>
 							<div class="tituloItem">Soporte tras de motor Corolla 2000/2004</div>
@@ -74,9 +91,27 @@ globalsupply
 			<div class="listaNoticias">
 				<ul>
 					<li>
-						<div class="tituloNoticia"></div>
-						<img src="">
-						<div class="descripNoticia"></div>
+						<div class="tituloNoticia">Prueba de texto título</div>
+						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
+						<div class="descripNoticia">
+							<p>Descripción de la noticia del blog, este texto va debajo de la imagen.</p>
+						</div>
+						<div class="botonLeermas">{% trans 'Leer más' %}</div>
+					</li>
+					<li>
+						<div class="tituloNoticia">Prueba de texto título</div>
+						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
+						<div class="descripNoticia">
+							<p>Descripción de la noticia del blog, este texto va debajo de la imagen.</p>
+						</div>
+						<div class="botonLeermas">{% trans 'Leer más' %}</div>
+					</li>
+					<li>
+						<div class="tituloNoticia">Prueba de texto título</div>
+						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
+						<div class="descripNoticia">
+							<p>Descripción de la noticia del blog, este texto va debajo de la imagen.</p>
+						</div>
 						<div class="botonLeermas">{% trans 'Leer más' %}</div>
 					</li>
 				</ul>

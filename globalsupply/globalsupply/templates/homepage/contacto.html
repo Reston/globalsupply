@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 {% block title %}
 Contacto - Global Supply
 {% endblock %}
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/contacto.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/homepage/contact.css' %}">
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -15,8 +16,7 @@ Contacto - Global Supply
 	<section class="fondoContacto">
 		<div class="wrapper">
 		<div class="tituloStyle">
-			<h2>Contacto</h2>
-			<div class="lineatitulo"></div>
+			<h1>Contacto</h1>
 		</div>		
 		{% if success %}
 		<div class="mensajeenviado">
@@ -33,25 +33,37 @@ Contacto - Global Supply
 			{% csrf_token %}
 			<div class="campo">
 				{{ field.errors }}
-				<label for="nombre">Nombre:</label>
+				<label for="id_nombre">{% trans 'Nombre:' %}</label>
 				{{ form.nombre }}
 				{{ form.nombre.errors }}
 			</div>
 			<div class="campo">				
 				{{ field.errors }}
-				<label for="email">Correo Electrónico:</label>
+				<label for="id_email">{% trans 'Correo Electrónico:' %}</label>
 				{{ form.email }}
 				{{ form.email.errors }}
 			</div>
 			<div class="campo">
 				{{ field.errors }}
-				<label for="telefono">Teléfono:</label>
+				<label for="id_telefono">{% trans 'Teléfono:' %}</label>
 				{{ form.telefono }}
 				{{ form.telefono.errors }}
 			</div>
+			<div class="campo">
+				{{ field.errors }}
+				<label for="id_empresa">{% trans 'Empresa:' %}</label>
+				{{ form.empresa }}
+				{{ form.empresa.errors }}
+			</div>
+			<div class="campo">
+				{{ field.errors }}
+				<label for="id_pais">{% trans 'País:' %}</label>
+				{{ form.pais }}
+				{{ form.pais.errors }}
+			</div>
 			<div class="textareaDescripcion">
 				{{ field.errors }}
-				<label for="texto">Breve descripción de su proyecto: </label>
+				<label for="id_texto">{% trans 'Breve descripción de su proyecto:' %}</label>
 				{{ form.texto }}
 				{{ form.texto.errors }}
 			</div>
@@ -62,17 +74,17 @@ Contacto - Global Supply
 		{% endif %}
 		<section class="infoContacto">
 			<div class="tituloStyle">
-				<h2>Información de contacto</h2>
+				<h2>{% trans 'Información de contacto' %}</h2>
 			</div>
 			<div class="redesContacto">
-				<a href="https://twitter.com/*" rel="nofollow"><div class="twitterlogo"></div></a>
-				<a href="https://www.facebook.com/*" rel="nofollow"><div class="facebook"></div></a>
-				<a href="http://instagram.com/*" rel="nofollow"><div class="instagram"></div></a>
-				<a href="https://plus.google.com/+*/" rel="nofollow"><div class="googleplus"></div></a>
+				<a href="https://twitter.com/*" rel="nofollow"><div class="twitterlogoContacto"></div></a>
+				<a href="https://www.facebook.com/*" rel="nofollow"><div class="facebookContacto"></div></a>
+				<a href="http://instagram.com/*" rel="nofollow"><div class="skypeContacto"></div></a>
+				<a href="https://plus.google.com/+*/" rel="nofollow"><div class="googleplusContacto"></div></a>
 			</div>
 			<div class="mediosContacto">
-				<div class="porTelefono">(305) 848-6244 | (786) 664-5321</div>
-				<div class="porCorreo">info@globalsupplyexport.com</div>
+				<div class="porTelefonoContacto">(305) 848-6244 | (786) 664-5321</div>
+				<div class="porCorreoContacto">info@globalsupplyexport.com</div>
 			</div>
 		</section>
 	</div>

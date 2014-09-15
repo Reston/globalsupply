@@ -1,0 +1,125 @@
+@charset 'utf-8';
+body{
+	background: url(../../img/textura.png);
+}
+.tituloSection{
+	color: #0A77BD;
+	display: inline-block;
+}
+.tituloSection h2{
+	font-size: 4em;
+	border-top: 1px solid #0A77BD;
+	display: inline;
+}
+.tituloSection h6{
+	font-size: 1.4em;
+	margin: 0;
+	margin-bottom: 10px;
+}
+.emailSuscribir{
+	background: #A7A9AC url(../../img/caucho.png) no-repeat right;
+	color: #FFF;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-family: 'Muli';
+}
+label{
+	font-weight: bold;
+}
+input{
+	border: none;
+	padding: .5em 1em;
+}
+input[type='submit']{
+	background: #808080;
+	border: none;
+	color: #FFF;
+	padding: .5em 1em;
+}
+.descripcionIndex{
+	display: inline-block;
+}
+.productos{
+	background: #dddddf;
+}
+.listaItem{
+	margin: 0 0 10px 0;
+	padding: 0;
+	list-style: none;
+}
+.item{
+	display: inline-block;
+	width: 31%;
+	margin: 0 .5%;
+	padding: 0 .5%;
+	vertical-align: top;
+}
+.item img{
+	width: 100%;
+}
+.descripItem{
+	background: #0A77BD;
+}
+.marcaItem, .tituloItem{
+	display: inline-block;
+	width: 38.5%;
+	vertical-align: top;
+	color: white;
+	text-align: center;
+	padding: 1em;
+}
+.marcas{
+	background: url(../../img/marcasfondo.png) no-repeat;
+	background-size: 100%;
+	color: white;
+}
+.marcas h6, .marcas h2{
+	color: white;
+}
+.marcas .tituloSection h2 {
+	border-top: 1px solid white;
+}
+.listaMarcas ul{
+	margin: 0;
+	padding: 0;
+}
+.listaMarcas ul li{
+	display: inline-block;
+}
+.noticias{
+	background: url(../../img/texturablog.png);
+}
+.listaNoticias ul li{
+	width: 30%;
+	padding: 1% 1%;
+	display: inline-block;
+	text-align: right;
+	background: #e0e0e0;
+	vertical-align: top;
+}
+.tituloNoticia{
+	text-align: center;
+	color: #0A77BD;
+	font-size: 1.4em;
+}
+.listaNoticias li img{
+	width: 100%;
+}
+.descripNoticia{
+	text-align: justify;
+}
+.botonLeermas{
+	background: #0f77be;
+	color: white;
+	display: inline-block;
+	padding: 5px;
+}
+.verNoticias, .verProductos{
+	padding: .5em;
+	font-size: 1.5em;
+	background: #a7a9ac;
+	color: #FFF;
+	margin: 0 auto;
+	width: 29%;
+	text-align: center;
+}

@@ -1,12 +1,14 @@
 #!/usr/local/bin/python
 # -*- encoding: utf-8 -*-
 from django import forms
-
+from django.utils.translation import ugettext_lazy as _
 
 class contactForm(forms.Form):
-	nombre = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' Su nombre'}))
-	email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' nick@email.com'}))
-	telefono = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' Su Número de teléfono'}))
+	nombre = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _('Su nombre')}))
+	email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'nick@email.com'}))
+	telefono = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _(u'Su número de teléfono')}))
+	empresa = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _('Empresa a la que representa')}))
+	pais = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _('De origen')}))
 	texto = forms.CharField(widget=forms.Textarea)
 
 	def clean_asunto(self):

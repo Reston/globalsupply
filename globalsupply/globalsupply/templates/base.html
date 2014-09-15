@@ -14,7 +14,9 @@
 {% block head %} {% endblock%}
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
 <title>{% block title %} {% endblock%}</title>
+<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
 {% block css %}
 {% endblock %}
 {% block js %}
@@ -33,12 +35,12 @@
 	</script> -->
 	<header id="home" class="cabecera">
 		<div class="barraAzul">
-			<div class="wrapper">
+			<div class="wrapperBarraAzul">
 				<!-- Redes sociales -->
 				<div class="redesSociales">
 					<a href="https://twitter.com/*" rel="nofollow"><div class="twitterlogo"></div></a>
 					<a href="https://www.facebook.com/*" rel="nofollow"><div class="facebook"></div></a>
-					<a href="http://instagram.com/*" rel="nofollow"><div class="instagram"></div></a>
+					<a href="http://instagram.com/*" rel="nofollow"><div class="skype"></div></a>
 					<a href="https://plus.google.com/+*/" rel="nofollow"><div class="googleplus"></div></a>
 				</div>
 				<!-- Formulario para cambiar idioma -->
@@ -61,15 +63,18 @@
 		</div>
 		<div class="wrapper">
 			<div class="logo">
-				Logo
-				<img src="">
+				<img src="{% static 'img/logopeq.png' %}" alt="logo de la empresa, Global Supply">
 			</div>				
 			<nav class="barraNavegacion">
 				<ul>
 					<li class="index"><a href="{% url 'homepageindex' %}">{% trans 'Inicio' %}</a></li>
-					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quienes Somos' %}</a></li>
-					<li class="services"><a href="{% url 'productproducts' %}">{% trans 'Productos' %}</a></li>
+					<span>/</span>
+					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quiénes Somos' %}</a></li>
+					<span>/</span>
+					<li class="services"><a href="">{% trans 'Productos' %}</a></li>
+					<span>/</span>
 					<li class="blog"><a href="/blog">Blog</a></li>
+					<span>/</span>
 					<li class="contact"><a href="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</a></li>
 				</ul>
 			</nav>
@@ -81,24 +86,36 @@
 	{% block clear %} {% endblock %}
 	<footer>
 		{% block footer %}{% endblock%}
-		<div class="wrapper">
+		<div class="wrapperFooter">
 			<div class="navFooter">
 				<ul>
 					<li class="index"><a href="{% url 'homepageindex' %}">{% trans 'Inicio' %}</a></li>
-					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quienes Somos' %}</a></li>
-					<li class="services"><a href="{% url 'productproducts' %}">{% trans 'Productos' %}</a></li>
+					<span>/</span>
+					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quiénes Somos' %}</a></li>
+					<span>/</span>
+					<li class="services"><a href="">{% trans 'Productos' %}</a></li>
+					<span>/</span>
 					<li class="blog"><a href="/blog">Blog</a></li>
+					<span>/</span>
 					<li class="contact"><a href="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</a></li>
 				</ul>
 			</div>	
 			<div class="footer-der">
-				telefono y correo
+				<div class="mediosContactoFooter">
+					<div class="porTelefono">(305) 848-6244 | (786) 664-5321</div>
+					<div class="porCorreo">info@globalsupplyexport.com</div>
+				</div>
 			</div>
 			<div class="footer-mid">
-				Logo
+				<img src="{% static 'img/logoblancopeq.png' %}" alt="Logo empresa footer en blanco">
 			</div>
 			<div class="footer-izq">
-				Redes sociales
+				<div class="redesContacto">
+					<a href="https://twitter.com/*" rel="nofollow"><div class="twitterlogoFooter"></div></a>
+					<a href="https://www.facebook.com/*" rel="nofollow"><div class="facebookFooter"></div></a>
+					<a href="http://instagram.com/*" rel="nofollow"><div class="skypeFooter"></div></a>
+					<a href="https://plus.google.com/+*/" rel="nofollow"><div class="googleplusFooter"></div></a>
+				</div>
 			</div>
 			<div class="footer-abajo">
 				<div class="copyRight">Global Supply © Copyright 2014. Todos los derechos reservados. Developed by: <a href="http://duranjo.com/" rel="nofollow"><img src="http://duranjo.com/static/img/duranjowhite.png" alt="Logo empresa duranjo"></a>

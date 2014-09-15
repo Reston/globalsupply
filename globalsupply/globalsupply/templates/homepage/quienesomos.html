@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 {% block title %}
 Trabajos realizados - Duranjo
 {% endblock %}
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/quienesomos.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/homepage/about.css' %}">
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -16,8 +17,8 @@ Trabajos realizados - Duranjo
 		<!-- Quienes somos -->
 		<div class="somos">
 			<div class="textoDerecha">
-				<h1>{% trans 'Quienes Somos' %}</h1>
-				<div class="texto1">{% trans 'Global supply import & export inc. es una empresa dedicada a la venta de repuestos de excelente calidad para maquinaria pesada como:</div>
+				<h1>{% trans 'Quiénes Somos' %}</h1>
+				<div class="texto">{% trans 'Global supply import & export inc. es una empresa dedicada a la venta de repuestos de excelente calidad para maquinaria pesada como:' %}</div>
 				<div class="repuestosMarcasPesados">
 					<ul>
 						<li>Catterpillar</li>
@@ -25,7 +26,7 @@ Trabajos realizados - Duranjo
 						<li>John deere</li>
 					</ul>
 				</div>
-				<div class="texto2">{% trans 'Así como también para vehículos livianos tales como:' %}</div>
+				<div class="texto">{% trans 'Así como también para vehículos livianos tales como:' %}</div>
 				<div class="repuestosMarcasLivianos">
 					<ul>
 						<li>Toyota</li>
@@ -36,7 +37,7 @@ Trabajos realizados - Duranjo
 						<li>Dodge</li>
 					</ul>
 				</div>
-				<div class="texto3">{% trans 'Contamos con el apoyo incondicional de nuestros proveedores los cuales suplen y dan respuesta de forma inmiediata a nuestras necesidades, para poder curbir la demanda de nuestros clientes, así como también el servicio de delivery hacia el warehouse de su preferencia.' %}</div>
+				<div class="texto">{% trans 'Contamos con el apoyo incondicional de nuestros proveedores los cuales suplen y dan respuesta de forma inmiediata a nuestras necesidades, para poder curbir la demanda de nuestros clientes, así como también el servicio de delivery hacia el warehouse de su preferencia.' %}</div>
 			</div>
 			<div class="imagenRuta"></div>
 		</div>
