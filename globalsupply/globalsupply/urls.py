@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 	# Examples:
 	# url(r'^$', 'globalsupply.views.home', name='home'),
 	url(r'^', include('globalsupply.apps.homepage.urls')),
+	url(r'^', include('globalsupply.apps.productos.urls')),
 	# Uncomment the admin/doc line below to enable admin documentation:
 	# url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 	(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),

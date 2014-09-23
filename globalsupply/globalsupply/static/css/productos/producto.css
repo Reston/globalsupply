@@ -1,0 +1,36 @@
+@charset 'utf-8';
+body{
+	background: #F5F5F5;
+}
+h1{
+	font-size: 3em;
+	margin: 0;
+	text-align: center;
+}
+.derecha, .izquierda{
+	width: 49%;
+	vertical-align: top;
+	display: inline-block;
+}
+.tituloh2{
+	color: #8D8D8D;
+}
+.contenedorInfo{
+	margin-bottom: 1em;
+	text-align: center;
+	padding: 1em;
+	color: #FFF;
+	background: #0A77BD;
+}
+.codigo, .precio, .tipo, .existencia{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	margin: 0 5px;
+}
+.tipo a{
+	color: white;
+}
+.codigotext, .preciotext, .tipotext, .existenciatext{
+	font-weight: bold;
+}

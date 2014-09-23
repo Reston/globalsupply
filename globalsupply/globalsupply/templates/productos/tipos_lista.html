@@ -1,0 +1,15 @@
+{% load custom_filters %}
+{% load endless %}
+{% paginate tipos %}
+{% for tipo in tipos %}
+<div class="productoContainer">
+	<a href="{{ tipo.get_absolute_url }}">
+		<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
+		<div class="productoTitulo">{{ tipo.titulo }}</div>
+		<div class="productoDescripcion">
+			{{ tipo.breve_descripcion }}
+		</div>
+	</a>
+</div>
+{% endfor %}
+{% show_more %}

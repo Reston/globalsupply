@@ -10,9 +10,3 @@ def getimagen(list, mid):
 		if list[i].producto_id == mid:
 			return list[i].imagen
 	return
-
-
-@register.filter
-def getPrecio(valorActual, ValorDolar):
-	TWOPLACES = Decimal(10) ** -2
-	return (valorActual*ValorDolar).quantize(TWOPLACES)

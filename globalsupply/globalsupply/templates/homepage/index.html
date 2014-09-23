@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load custom_filters %}
 {% load staticfiles %}
 {% block head %} 
 <meta name="description" content="">
 {% endblock%}
 {% block title %}
-globalsupply
+Global Supply - Página de inicio
 {% endblock%}
 {% block css%}
 <link rel="stylesheet" href="{% static 'css/homepage/index.css' %}">
@@ -23,9 +24,20 @@ globalsupply
 	</section>
 	<section class="emailSuscribir">
 		<div class="wrapper">
-			<label>{% trans 'Subcribir correo:' %}</label>
-			<input>
-			<input type="submit">
+			<form class="suscripcionForm" action="#correo" method="POST">{% csrf_token %}
+				{% if newsletter %}
+				<div class="correo">
+					{{ form.subject.errors }}
+					<label for="id_email">{% trans 'Correo Electrónico:' %}</label>
+					{{ form.correo }}
+					<input type="submit">
+				</div>
+				{% else %}
+				<div class="correo">
+					{% trans '¡GRACIAS POR SUSCRIBIRTE A NUESTRO BOLETINES E INFORMACIÓN!' %}
+				</div>
+				{% endif %}
+			</form>
 		</div>
 	</section>
 	<section class="productos">
@@ -38,31 +50,20 @@ globalsupply
 				<p>Texto</p>
 			</div>
 			<div class="listaProductos">
-				productos recientes.
 				<ul class="listaItem">
+					{% for p in productos %}
 					<li class="item">
-						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
-						<div class="descripItem">
-							<div class="marcaItem">Marca: Toyota</div>
-							<div class="tituloItem">Soporte tras de motor Corolla 2000/2004</div>
-						</div>
+						<a href="{{ p.get_absolute_url }}">
+							<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:p.id}}" alt="{{p.titulo}} imagen"/>
+							<div class="descripItem">
+								<div class="marcaItem">Marca: {{p.tipo.categoria}}</div>
+								<div class="tituloItem">{{p.titulo}}</div>
+							</div>
+						</a>
 					</li>
-					<li class="item">
-						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
-						<div class="descripItem">
-							<div class="marcaItem">Marca: Toyota</div>
-							<div class="tituloItem">Soporte tras de motor Corolla 2000/2004</div>
-						</div>
-					</li>
-					<li class="item">
-						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
-						<div class="descripItem">
-							<div class="marcaItem">Marca: Toyota</div>
-							<div class="tituloItem">Soporte tras de motor Corolla 2000/2004</div>
-						</div>
-					</li>
+					{% endfor %}					
 				</ul>
-				<div class="verProductos">{% trans 'Ver todos los productos' %}</div>
+				<div class="verProductos"><a href="{% url 'categoria' %}">{% trans 'Ver marcas de productos' %}</a></div>
 			</div>
 		</div>
 	</section>
@@ -74,9 +75,9 @@ globalsupply
 			</div>
 			<div class="listaMarcas">
 				<ul>
-					<li>Marca1</li>
-					<li>Marca2</li>
-					<li>Marca3</li>
+					{% for c in categoria %}
+						<li><a href="{{c.get_absolute_url}}"><img src="{{ MEDIA_URL }}/{{c.imagen}}"></a></li>
+					{% endfor %}
 					<!-- 5 marcas quizás -->
 				</ul>
 			</div>
@@ -90,33 +91,21 @@ globalsupply
 			</div>
 			<div class="listaNoticias">
 				<ul>
+					{% for item in entradas %}
 					<li>
-						<div class="tituloNoticia">Prueba de texto título</div>
-						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
+						<div class="tituloNoticia">{{ item.title }}</div>
+						<img src="{{ MEDIA_URL }}{{item.image}}" alt="{{ item.title }}">
 						<div class="descripNoticia">
-							<p>Descripción de la noticia del blog, este texto va debajo de la imagen.</p>
+							{% autoescape off %}
+							<p>{{item.content}}...</p>
+							{% endautoescape %}
 						</div>
-						<div class="botonLeermas">{% trans 'Leer más' %}</div>
+						<div class="botonLeermas"><a href="{{ item.get_absolute_url }}">{% trans 'Leer más' %}</a></div>
 					</li>
-					<li>
-						<div class="tituloNoticia">Prueba de texto título</div>
-						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
-						<div class="descripNoticia">
-							<p>Descripción de la noticia del blog, este texto va debajo de la imagen.</p>
-						</div>
-						<div class="botonLeermas">{% trans 'Leer más' %}</div>
-					</li>
-					<li>
-						<div class="tituloNoticia">Prueba de texto título</div>
-						<img src="{% static 'img/ejemplo1.png' %}" alt="imagen blabla">
-						<div class="descripNoticia">
-							<p>Descripción de la noticia del blog, este texto va debajo de la imagen.</p>
-						</div>
-						<div class="botonLeermas">{% trans 'Leer más' %}</div>
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
-			<div class="verNoticias">{% trans 'Ver todas las noticias' %}</div>
+			<div class="verNoticias"><a href="/blog">{% trans 'Ver todas las noticias' %}</a></div>
 		</div>
 	</section>	
 	<!-- BACK TOP BOX -->

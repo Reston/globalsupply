@@ -1,6 +1,7 @@
 #!/usr/local/bin/python
 # -*- encoding: utf-8 -*-
 from django import forms
+from .models import CorreoBoletin
 from django.utils.translation import ugettext_lazy as _
 
 class contactForm(forms.Form):
@@ -24,3 +25,11 @@ class contactForm(forms.Form):
 		if len(texto) < 4:
 			raise forms.ValidationError("*")
 		return texto
+
+
+class boletinForm(forms.ModelForm):
+	correo = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'user@domain.com'}))
+
+	class Meta:
+		model = CorreoBoletin
+		fields = ['correo']

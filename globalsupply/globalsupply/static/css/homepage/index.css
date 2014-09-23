@@ -10,6 +10,7 @@ body{
 	font-size: 4em;
 	border-top: 1px solid #0A77BD;
 	display: inline;
+	padding-top: 5px;
 }
 .tituloSection h6{
 	font-size: 1.4em;
@@ -50,15 +51,25 @@ input[type='submit']{
 .item{
 	display: inline-block;
 	width: 31%;
-	margin: 0 .5%;
+	margin: 10px .5%;
 	padding: 0 .5%;
 	vertical-align: top;
 }
+.item a{
+	text-decoration: none;
+}
 .item img{
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 250px;
+	display: block;
+	text-decoration: none;
 }
 .descripItem{
 	background: #0A77BD;
+	min-height: 68px;
+	text-decoration: none;
 }
 .marcaItem, .tituloItem{
 	display: inline-block;
@@ -67,6 +78,7 @@ input[type='submit']{
 	color: white;
 	text-align: center;
 	padding: 1em;
+	text-decoration: none;
 }
 .marcas{
 	background: url(../../img/marcasfondo.png) no-repeat;
@@ -85,6 +97,13 @@ input[type='submit']{
 }
 .listaMarcas ul li{
 	display: inline-block;
+	width: 19%;
+}
+.listaMarcas img{
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
 }
 .noticias{
 	background: url(../../img/texturablog.png);
@@ -92,6 +111,7 @@ input[type='submit']{
 .listaNoticias ul li{
 	width: 30%;
 	padding: 1% 1%;
+	margin: 0 5px;
 	display: inline-block;
 	text-align: right;
 	background: #e0e0e0;
@@ -114,6 +134,10 @@ input[type='submit']{
 	display: inline-block;
 	padding: 5px;
 }
+.botonLeermas a{
+	text-decoration: none;
+	color: white;
+}
 .verNoticias, .verProductos{
 	padding: .5em;
 	font-size: 1.5em;
@@ -122,4 +146,8 @@ input[type='submit']{
 	margin: 0 auto;
 	width: 29%;
 	text-align: center;
+}
+.verNoticias a, .verProductos a{
+	text-decoration: none;
+	color: white;
 }

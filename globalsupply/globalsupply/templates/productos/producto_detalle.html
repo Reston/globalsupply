@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load url from future %}
+{% load i18n %}
 {% load staticfiles %}
 {% load custom_filters %}
 {% block head %} 
@@ -17,18 +17,10 @@ Producto {{ producto.titulo }} - Activa24 C.A.
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="{% static 'js/adquiridos/jquery.flexslider-min.js' %}"></script>
 {% endblock %}
-{% block navi %}
-		<ul>
-			<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a>
-			<li class="about"><a href="{% url 'homepageabout' %}">Sobre nosotros</a>
-			<li class="services"><a href="{% url 'homepageserviciosyproductos' %}">Productos y Servicios</a>
-			<li class="contact"><a href="{% url 'homapagecontact' %}">Contacto</a>
-		</ul>				
-{% endblock %}
 {% block contenido %}
 <section class="producto">
 	<div class="wrapper">
-		<a class="back-link" href="{{producto.categoria.get_absolute_url}}">«Volver</a>				
+		<a class="back-link" href="{{producto.tipo.get_absolute_url}}">«Volver</a>				
 		<section class="cuadro">	
 				<div class="derecha">
 				<div class="sliderimagenes">
@@ -42,46 +34,39 @@ Producto {{ producto.titulo }} - Activa24 C.A.
 		  				</ul>
 					</div>		
 				</div>
-				<div class="compartirRedes">
-					<div class="addthis_toolbox addthis_default_style acomodar">
-						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-						<a class="addthis_button_tweet"></a>
-						<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-						<a class="addthis_button_linkedin_counter"></a>
-						<a class="addthis_counter addthis_pill_style"></a>
-					</div>				
-				</div>
 			</div>
-				<div class="izquierda">
+			<div class="izquierda">
 				<h2 class="tituloh2">{{ producto.titulo }}</h2>
-				<div class="codigo">{{ producto.codigo }}</div>	
-				{% if servicio %}
-					<div class="categoria left">Categoria: <a href="#">{{ producto.categoria }}</a></div>
-				{% else %}
+				<div class="contenedorInfo">
+					<div class="codigo">
+						<div class="codigotext">{% trans 'Código:' %}</div>
+						<div class="codigoproducto">{{ producto.codigo }}</div>
+					</div>	
 					{% if producto.disponible %}
 						<div class="precio">
-							<div class="preciotext">PRECIO: </div>
-							<div class="numeroprecio">
-							{% for dol in dolar %}
-								{{dol.dolarEnBolivar|getPrecio:producto.precio_dolares}}
-							{% endfor%}Bs.</div>
+							<div class="preciotext">{% trans 'Precio:' %}</div>
+							<div class="numeroprecio">{{producto.precio}}Bs.</div>
 						</div><!-- Cambiar esto con un templatetag -->
-
-					<div class="categoria right">Categoria: <a href="#">{{ producto.categoria }}</a></div>
+						<div class="tipo">
+							<div class="tipotext">{% trans 'Tipo:' %}</div>
+							<a href="{{ producto.tipo.get_absolute_url }}">{{ producto.tipo }}</a></div>
+						<div class="existencia">
+							<div class="existenciatext">Existencia:</div>
+							{{producto.existencia}}
+						</div>
 					{% else %}
-						<h3>Precio: <div class="precioTachado">{{ producto.precio_dolares }} Bs.</div><div class="nodisponible">Producto no disponible</div></h3>
-					<div class="categoria left">Categoria: <a href="#">{{ producto.categoria }}</a></div>						
+						<h3>Precio: <div class="precioTachado">{{ producto.precio }} Bs.</div><div class="nodisponible">Producto no disponible</div></h3>
+						<div class="tipo">Tipo: <a href="#">{{ producto.tipo }}</a></div>						
 					{% endif %}
-				{% endif %}
-					<div class="mini">
+				</div>
+				<div class="mini">
 					{{ producto.descripcion_corta }}
 				</div>	
 				<h3>Descripción</h3>
 			{% autoescape off %}
 				{{ producto.descripcion }}
 			{% endautoescape %}				
-				</div>
-	
+				</div>	
 		</section>
 		<div class="face">
 		<div class="fb-comments" data-href="http://www.activa24ca.com{{ request.path }}" data-width="960" data-num-posts="10"></div>
@@ -108,6 +93,4 @@ Producto {{ producto.titulo }} - Activa24 C.A.
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<!-- ADDTHIS script -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
 {% endblock %}

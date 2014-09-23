@@ -52,9 +52,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'globalsupply.apps.homepage',
+    'globalsupply.apps.productos',
     'tagging',
     'mptt',
     'zinnia',
+    'endless_pagination',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -203,6 +205,12 @@ LOGGING = {
     }
 }
 
+#configuracion endless-pagination
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
+)
+ENDLESS_PAGINATION_PER_PAGE = 12
 
 #Configuraciones para enviar mensajes usando gmail
 EMAIL_USE_TLS = True

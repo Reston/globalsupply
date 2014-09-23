@@ -71,7 +71,7 @@
 					<span>/</span>
 					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quiénes Somos' %}</a></li>
 					<span>/</span>
-					<li class="services"><a href="">{% trans 'Productos' %}</a></li>
+					<li class="services"><a href="{% url 'categoria' %}">{% trans 'Productos' %}</a></li>
 					<span>/</span>
 					<li class="blog"><a href="/blog">Blog</a></li>
 					<span>/</span>
@@ -81,7 +81,7 @@
 		</div>
 	</header>
 	<section class="contenido">
-		{% block contenido %} {% endblock%}
+	{% block contenido %}{% endblock%}
 	</section>
 	{% block clear %} {% endblock %}
 	<footer>
@@ -93,7 +93,7 @@
 					<span>/</span>
 					<li class="works"><a href="{% url 'homepageabout' %}">{% trans 'Quiénes Somos' %}</a></li>
 					<span>/</span>
-					<li class="services"><a href="">{% trans 'Productos' %}</a></li>
+					<li class="services"><a href="{% url 'categoria' %}">{% trans 'Productos' %}</a></li>
 					<span>/</span>
 					<li class="blog"><a href="/blog">Blog</a></li>
 					<span>/</span>
