@@ -19,7 +19,6 @@
 
 html, body{
 	margin: 0;
-	height: 100%;
 	background: white;
 	color: black;
 	font-family: Helvetica, Arial, sans-serif;
@@ -164,12 +163,16 @@ nav span{
 }
 .flex-caption{
 	position: absolute;
-	bottom: 10%;
-	background: #0A77BD; /* Azul*/
-	width: 40%;
+	display: block;
+	bottom: 0;
+	background: #0A77BD;
+	width: 50%;
+	height: 91px;
 	font-family: 'Muli';
-	font-size: 3em;
-	text-indent: 1em;
+	font-size: 2em;
+	padding-right: 45%;
+	padding-left: 5%;
+	margin: 0;
 	color: #FFF;
 }
 

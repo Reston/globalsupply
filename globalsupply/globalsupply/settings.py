@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'globalsupply.apps.homepage',
     'globalsupply.apps.productos',
+    'globalsupply.apps.slider',
     'tagging',
     'mptt',
     'zinnia',

@@ -5,6 +5,7 @@ from .forms import contactForm, boletinForm
 from django.template import RequestContext
 from django.core.mail import send_mail
 from globalsupply.apps.productos.models import Producto, ImgProductos, Categoria
+from globalsupply.apps.slider.models import SliderItem
 from zinnia.models import Entry
 import nltk
 
@@ -19,6 +20,8 @@ def index(request):
 			newsletter = False
 	else:
 		form = boletinForm()
+	#slider
+	slideritem = SliderItem.objects.all()[:5]
 	#productos e imagenes de sus producto
 	productos = Producto.objects.filter(destacado=True).order_by('creado_en')[:6]
 	imagenes = ImgProductos.objects.filter(producto__in=list(productos))
@@ -28,7 +31,7 @@ def index(request):
 	for ent in entradas:
 		quitar_html= nltk.clean_html(ent.content) 
 		ent.content =  quitar_html[:65]
-	ctx = {'productos': productos, 'imagenes': imagenes, 'categoria': categoria, 'form':form, 'newsletter':newsletter, 'entradas': entradas}
+	ctx = {'slideritem': slideritem, 'productos': productos, 'imagenes': imagenes, 'categoria': categoria, 'form':form, 'newsletter':newsletter, 'entradas': entradas}
 	return render_to_response('homepage/index.html', ctx, context_instance=RequestContext(request))
 
 def about(request):

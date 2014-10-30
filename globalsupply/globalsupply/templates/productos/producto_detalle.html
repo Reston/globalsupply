@@ -25,14 +25,14 @@ Producto {{ producto.titulo }} - Activa24 C.A.
 				<div class="derecha">
 				<div class="sliderimagenes">
 					<div class="flexslider">
-		  				<ul class="slides">
-		  				{% if imagenes %}
-		  				{% for img in imagenes %}
-		  					<li  data-thumb="{{ MEDIA_URL }}/{{img.imagen}}"><img src="{{ MEDIA_URL }}/{{img.imagen}}" alt="{{img.titulo}}"></li>
-		  				{% endfor %}
-		  				{% endif %}
-		  				</ul>
-					</div>		
+						<ul class="slides">
+						{% if imagenes %}
+						{% for img in imagenes %}
+							<li  data-thumb="{{ MEDIA_URL }}/{{img.imagen}}"><img src="{{ MEDIA_URL }}/{{img.imagen}}" alt="{{img.titulo}}"></li>
+						{% endfor %}
+						{% endif %}
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="izquierda">
@@ -75,10 +75,10 @@ Producto {{ producto.titulo }} - Activa24 C.A.
 		<!-- SLIDER INIT -->
 	<script>
 		$(window).load(function() {
-  			$('.flexslider').flexslider({
-    			animation: "slide",
-    			controlNav: "thumbnails"
-  			});
+			$('.flexslider').flexslider({
+				animation: "slide",
+				controlNav: "thumbnails"
+			});
 		});
 	</script>
 

@@ -10,16 +10,30 @@ Global Supply - Página de inicio
 {% endblock%}
 {% block css%}
 <link rel="stylesheet" href="{% static 'css/homepage/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/adquiridos/jquery.flexslider-min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/adquiridos/back-top.js' %}"></script>
 {% endblock %}
 {% block clear %}{% endblock%}
 {% block contenido %}
 	<section class="bannerPrincipal">
 		<h1>{% trans 'Servicio, Confianza y Satisfacción' %}</h1>
-		<div class="wrapper banner1">
+		<div class="banner1">
+			<div class="flexslider">
+				<ul class="slides">
+				{% if slideritem %}
+				{% for item in slideritem %}
+					<li  data-thumb="{{ MEDIA_URL }}/{{item.image}}">
+						<img src="{{ MEDIA_URL }}/{{item.image}}" alt="{{item.title}}">
+						<p class="flex-caption">{{item.texto_banner|safe}}</p>
+					</li>
+				{% endfor %}
+				{% endif %}
+				</ul>
+			</div>
 		</div>
 	</section>
 	<section class="emailSuscribir">
@@ -107,7 +121,21 @@ Global Supply - Página de inicio
 			</div>
 			<div class="verNoticias"><a href="/blog">{% trans 'Ver todas las noticias' %}</a></div>
 		</div>
-	</section>	
+	</section>
+	<!-- ====================================== -->
+	<!-- Scripts de la página de inicio -->
+	<!-- ====================================== -->
+	<!-- SLIDER INIT -->
+	<script>
+		$(document).ready(function() {
+		  $('.flexslider').flexslider({
+		  	slideshowSpeed: 7000,
+		  	// start: function(slider) {
+			//       slider.flexAnimate(slider.getTarget("next"));
+			//    }
+		  });
+		});
+	</script>
 	<!-- BACK TOP BOX -->
 	<div id="back-top" class="back-top">
 		<a href="#home"><span>↑</span>{% trans 'Regresar arriba' %}</a>
