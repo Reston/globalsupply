@@ -34,3 +34,14 @@ h1{
 .codigotext, .preciotext, .tipotext, .existenciatext{
 	font-weight: bold;
 }
+
+@media screen and (max-width: 1020px){
+	.face{
+		display: none;
+	}	
+}
+@media screen and (max-width: 650px){
+	.derecha, .izquierda {
+		width: 97%;
+	}
+}

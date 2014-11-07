@@ -103,7 +103,8 @@ p{
 		display: none;
 	}
 	.repuestosMarcasLivianos::after, .repuestosMarcasPesados::before {
-		background: none
+		background: none;
+		width: 0;
 	}
 }
 
