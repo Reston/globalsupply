@@ -23,6 +23,8 @@
 {% endblock %}
 </head>
 <body>
+	{% block background %}
+	{% endblock %}
 	<!-- Analytics SCRIPT GOOGLE! -->
 	<!--<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -77,6 +79,14 @@
 					<span>/</span>
 					<li class="contact"><a href="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</a></li>
 				</ul>
+				<select> 
+					<option value="" selected="selected">Menú</option> 
+					<option value="{% url 'homepageindex' %}">{% trans 'Inicio' %}</option> 
+					<option value="{% url 'homepageabout' %}">{% trans 'Quiénes Somos' %}</option>
+					<option value="{% url 'categoria' %}">{% trans 'Productos' %}</option>
+					<option value="/blog">Blog</option>
+					<option value="{% url 'homepagecontact' %}">Contacto</option>
+				</select>
 			</nav>
 		</div>
 	</header>
@@ -123,5 +133,10 @@
 			</div>	
 		</div>
 	</footer>
+	<script>
+	$("nav select").change(function() {
+	    window.location = $(this).find("option:selected").val();
+	});    
+	</script>
 </body>
 </html>

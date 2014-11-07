@@ -4,6 +4,9 @@ body{
 	margin: 0;
 	height: auto;
 }
+/*.wrapper{
+	padding: 0;
+}*/
 h1{
 	font-size: 3.5em;
 	color: #0A77BD;
@@ -16,8 +19,16 @@ h1{
 	text-align: center;
 }
 .textoDerecha{
+	display: inline-block;
 	width: 50%;
 	line-height: 1.5em;
+}
+.imagenRuta, .imagenMuestras{
+	display: inline-block;
+	width: 49%
+}
+.imagenRuta img, .imagenMuestras img{
+	width: 100%;
 }
 .repuestosMarcasPesados, .repuestosMarcasLivianos{
 	padding: 1em;
@@ -60,8 +71,10 @@ h1{
 	text-align: justify;
 }
 .textoIzquierda{
-	width: 50%;
-	margin-left: 50%;
+	display: inline-block;
+	vertical-align: top;
+	width: 49%;
+	margin-top: 25px;
 	line-height: 1.5em;
 }
 .historia h2{
@@ -75,4 +88,25 @@ h1{
 p{
 	margin: 0;
 	text-align: justify;
+}
+
+@media screen and (max-width: 1020px){
+
+}
+
+@media screen and (max-width: 650px){
+	.textoDerecha, .textoIzquierda{
+		width: 98%;
+		padding: 1%
+	}
+	.imagenRuta, .imagenMuestras{
+		display: none;
+	}
+	.repuestosMarcasLivianos::after, .repuestosMarcasPesados::before {
+		background: none
+	}
+}
+
+@media screen and (max-width: 450px){
+
 }

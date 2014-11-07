@@ -3,15 +3,15 @@
 {% load staticfiles %}
 {% load custom_filters %}
 {% block head %} 
-<meta name="description" content="Producto {{producto.titulo}} disponible por la empresa Activa24 C.A.">
+<meta name="description" content="Producto {{producto.titulo}} disponible por la empresa Global Supply">
 <meta name="msvalidate.01" content="5C0D61EB459CD0F5B9245FEA8F798DAA" />
 {% endblock%}
 {% block title %}
-Producto {{ producto.titulo }} - Activa24 C.A.
+Producto {{ producto.titulo }} - Global Supply
 {% endblock%}
 {% block css%}
 <link rel="stylesheet" href="{% static 'css/productos/producto.css' %}">
-<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexslidersin.css' %}">
 {% endblock %}
 {% block js %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@ Producto {{ producto.titulo }} - Activa24 C.A.
 {% block contenido %}
 <section class="producto">
 	<div class="wrapper">
-		<a class="back-link" href="{{producto.tipo.get_absolute_url}}">«Volver</a>				
+		<a class="back-link" href="{{producto.tipo.get_absolute_url}}">{% trans '«Volver' %}</a>				
 		<section class="cuadro">	
 				<div class="derecha">
 				<div class="sliderimagenes">
@@ -51,11 +51,11 @@ Producto {{ producto.titulo }} - Activa24 C.A.
 							<div class="tipotext">{% trans 'Tipo:' %}</div>
 							<a href="{{ producto.tipo.get_absolute_url }}">{{ producto.tipo }}</a></div>
 						<div class="existencia">
-							<div class="existenciatext">Existencia:</div>
+							<div class="existenciatext">{% trans 'Existencia:' %}</div>
 							{{producto.existencia}}
 						</div>
 					{% else %}
-						<h3>Precio: <div class="precioTachado">{{ producto.precio }} Bs.</div><div class="nodisponible">Producto no disponible</div></h3>
+						<h3>Precio: <div class="precioTachado">{{ producto.precio }} Bs.</div><div class="nodisponible">{% trans 'Producto no disponible' %}</div></h3>
 						<div class="tipo">Tipo: <a href="#">{{ producto.tipo }}</a></div>						
 					{% endif %}
 				</div>

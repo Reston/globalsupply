@@ -55,7 +55,7 @@ h6{
 	padding-top: 15px 0;
 }
 .wrapperBarraAzul{
-	width: 1000px;
+	width: 960px;
 	height: 100%;
 	margin: 0 auto 0 auto;
 	padding: 5px 0;
@@ -134,6 +134,9 @@ nav{
 	vertical-align: top;
 	margin-top: 40px;
 }
+nav select {
+  display: none;
+}
 nav li, .navFooter li{
 	display: inline-block;
 }
@@ -167,7 +170,7 @@ nav span{
 	bottom: 0;
 	background: #0A77BD;
 	width: 50%;
-	height: 91px;
+	height: 120px;
 	font-family: 'Muli';
 	font-size: 2em;
 	padding-right: 45%;
@@ -336,4 +339,68 @@ footer{
 }
 .back-top a:hover span {
 	background-color: #777;
+}
+
+@media screen and (max-width: 1020px){
+	.wrapper{
+		width: 100%;
+	}
+	.wrapperFooter{
+		width: 100%;
+	}
+	.wrapperBarraAzul{
+		width: 100%;
+	}
+	nav{
+		width: 96%;
+	}
+	nav ul{ display: none; }
+	nav select { display: inline-block; }
+	nav select{
+		text-align: center;
+		width: 100%;
+		font-size: 2em;
+		padding: 5px;
+		margin-top: 1em;
+		margin-bottom: 4px;
+		background: #0068A1;
+		color: #FFF;
+		border: none;
+		text-indent: 5px;
+  	}
+	/* configuración back-to-top responsive */
+	.back-top a{
+		width: 60px;
+		text-shadow: 0 0 1px black;
+	}
+	.back-top span {
+		width: 40px;
+		height: 40px;
+		font-weight: bold;
+		font-size: 4em;
+		line-height: 30px;
+		background: none;
+		margin: 0 auto 0 auto;
+	}
+	.back-top a:hover span {
+		background:none;
+	}
+	/* END CONFIG back-to-top */
+}
+@media screen and (max-width: 650px){
+	.footer-izq, .footer-mid, .footer-der {
+		width: 100%;
+	}
+	.navFooter ul{
+		margin: 0;
+		padding: 0;
+	}
+	.porTelefono, .porCorreo {
+		text-align: center;
+	}
+}
+@media screen and (max-width: 450px){
+	.logo img {
+		width: 100%;
+	}
 }

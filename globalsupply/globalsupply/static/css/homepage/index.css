@@ -5,14 +5,31 @@ body{
 h1{
 	font-size: 2em;
 	margin-right: 0;
+	margin-bottom: 0;
 	width: 23%;
 	padding-left: 60%;
 	color: #000;
 	text-align: center;
 }
+.flex-direction-nav{
+	display: none;
+}
+.cabecera{
+	margin-bottom: 80px;
+}
+.cabecera, .contenido{
+	position: relative;
+	z-index: 11;
+}
 .banner1{
 	position: relative;
 	height: 250px;
+}
+.backgroundImg{
+	background: url(../../img/backgroundindex.png) no-repeat center;
+	width: 100%;
+	height: 600px;
+	position: absolute;
 }
 .tituloSection{
 	color: #0A77BD;
@@ -94,7 +111,7 @@ input[type='submit']{
 }
 .marcas{
 	background: url(../../img/marcasfondo.png) no-repeat;
-	background-size: 100%;
+	background-size: 100% 100%;
 	color: white;
 }
 .marcas h6, .marcas h2{
@@ -162,4 +179,85 @@ input[type='submit']{
 .verNoticias a, .verProductos a{
 	text-decoration: none;
 	color: white;
+}
+
+@media screen and (max-width: 1020px){
+	.wrapper{
+		width: 100%;
+	}
+	h1{
+		width: 100%;
+		padding-left: 0;
+	}
+	.flexslider .slides {
+		position: static !important;
+	}
+	.flexslider .slides img {
+		width: 425px !important;
+		height: auto !important;
+		position: static !important;
+		left: 30% !important;
+	}
+	.flexslider .slides > li {
+		text-align: center;
+	}
+	.flex-caption {
+		position: static;
+		width: 100%;
+		padding: 0;
+	}
+	.clear{
+		clear: both;
+	}
+	.backgroundImg{
+		display: none;
+	}
+	.listaMarcas ul li {
+		width: 30%;
+		padding: 0 1%;
+	}
+}
+
+@media screen and (max-width: 650px){
+	.item{
+		width: 47%;
+	}
+	.tituloSection h2 {
+		font-size: 3em;
+	}
+	.emailSuscribir {
+		background: #A7A9AC;
+	}
+}
+
+@media screen and (max-width: 450px){
+	.item{
+		width: 97%;
+	}
+	.tituloSection h2 {
+		font-size: 1.8em;
+	}
+	.verNoticias, .verProductos {
+		width: 55%;
+	}
+	.listaNoticias ul{
+		padding: 0;
+	}
+	.listaNoticias ul li {
+		width: 97%;
+		margin: 0;
+	}
+	.flexslider .slides img {
+		width: 100% !important;
+	}
+	.flex-caption{
+		height: 250px;
+	}
+	.flex-control-nav {
+		top: 0;
+	}
+	.listaMarcas ul li {
+		width: 97%;
+		padding: 0 1%;
+	}
 }

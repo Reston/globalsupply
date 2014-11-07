@@ -52,7 +52,14 @@ h1{
 .categoriaTitulo{
 	font-weight: bold;
 	text-align: center;
+	font-size: 1.3em;
 }
 .categoriaDescripcion{
 	text-align: justify;
+}
+
+@media screen and (max-width: 650px){
+	.categoriaContainer {
+		width: 49%;
+	}
 }

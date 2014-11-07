@@ -12,13 +12,14 @@ h1{
 	font-size: 1.5em
 }
 form{
-	width: 49%;
+	width: 46%;
 	display: inline-block;
 }
 .infoContacto{
 	display: inline-block;
-	width: 35%;
+	width: 49%;
 	margin-left: 40px;
+	vertical-align: top;
 }
 .twitterlogoContacto, .facebookContacto, .googleplusContacto, .skypeContacto, .porTelefonoContacto::before, .porCorreoContacto::before{
 	background: url(../../img/contactoicons.png) no-repeat;
@@ -69,7 +70,9 @@ form{
 	top: -5px;	
 }
 
-
+.imagenTractor{
+	width: 100%;
+}
 /* Formulario de contacto*/
 .contactoCampos, .textareaDescripcion{
 	display: inline-block;
@@ -128,4 +131,17 @@ textarea{
 	color: #FFF;
 	border: none;
 	padding: 7px 25px;
+}
+@media screen and (max-width: 1020px){
+	form {
+		width: 90%;
+		padding: 0 5%;
+	}
+	.infoContacto{
+		width: 50%;
+		margin: 0 25%;
+	}
+	.imagenTractor{
+		width: 100%;
+	}
 }

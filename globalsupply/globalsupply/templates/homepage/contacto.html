@@ -5,7 +5,6 @@
 Contacto - Global Supply
 {% endblock %}
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/homepage/contact.css' %}">
 {% endblock %}
 {% block js %}
@@ -73,6 +72,7 @@ Contacto - Global Supply
 		</form>
 		{% endif %}
 		<section class="infoContacto">
+			<img src="{% static 'img/tractor.png' %}" class="imagenTractor">
 			<div class="tituloStyle">
 				<h2>{% trans 'Información de contacto' %}</h2>
 			</div>

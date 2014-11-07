@@ -18,6 +18,9 @@ Global Supply - Página de inicio
 <script type="text/javascript" src="{% static 'js/adquiridos/back-top.js' %}"></script>
 {% endblock %}
 {% block clear %}{% endblock%}
+{% block background %}
+<div class="backgroundImg"></div>
+{% endblock %}
 {% block contenido %}
 	<section class="bannerPrincipal">
 		<h1>{% trans 'Servicio, Confianza y Satisfacción' %}</h1>
@@ -35,6 +38,7 @@ Global Supply - Página de inicio
 				</ul>
 			</div>
 		</div>
+		<div class="clear"></div>
 	</section>
 	<section class="emailSuscribir">
 		<div class="wrapper">

@@ -5,7 +5,6 @@
 Trabajos realizados - Duranjo
 {% endblock %}
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/homepage/about.css' %}">
 {% endblock %}
 {% block js %}
@@ -39,12 +38,14 @@ Trabajos realizados - Duranjo
 				</div>
 				<div class="texto">{% trans 'Contamos con el apoyo incondicional de nuestros proveedores los cuales suplen y dan respuesta de forma inmiediata a nuestras necesidades, para poder curbir la demanda de nuestros clientes, así como también el servicio de delivery hacia el warehouse de su preferencia.' %}</div>
 			</div>
-			<div class="imagenRuta"></div>
+			<div class="imagenRuta">
+				<img src="{% static 'img/carretera.png' %}">
+			</div>
 		</div>
 		<!-- Historia -->
 		<div class="historia">
 			<div class="imagenMuestras">
-				<img src="">
+				<img src="{% static 'img/respuestos.png' %}">
 			</div>
 			<div class="textoIzquierda">
 				<h2>{% trans 'Historia' %}</h2>
