@@ -351,6 +351,10 @@ footer{
 	.wrapperBarraAzul{
 		width: 100%;
 	}
+	.logo{
+		text-align: center;
+		width: 100%;
+	}
 	nav{
 		width: 96%;
 	}

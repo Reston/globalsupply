@@ -26,7 +26,7 @@ h1{
 	height: 250px;
 }
 .backgroundImg{
-	background: url(../../img/backgroundindex.png) no-repeat center;
+	background: url(../../img/backgroundindex.png) no-repeat center bottom;
 	width: 100%;
 	height: 600px;
 	position: absolute;
@@ -227,6 +227,12 @@ input[type='submit']{
 	}
 	.emailSuscribir {
 		background: #A7A9AC;
+	}
+	.cabecera {
+		margin-bottom: 0;
+	}
+	nav{
+		margin-top: 0;
 	}
 }
 
