@@ -80,12 +80,12 @@
 					<li class="contact"><a href="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</a></li>
 				</ul>
 				<select> 
-					<option value="" selected="selected">Menú</option> 
+					<option value="" selected="selected">{% trans 'Menú' %}</option> 
 					<option value="{% url 'homepageindex' %}">{% trans 'Inicio' %}</option> 
 					<option value="{% url 'homepageabout' %}">{% trans 'Quiénes Somos' %}</option>
 					<option value="{% url 'categoria' %}">{% trans 'Productos' %}</option>
 					<option value="/blog">Blog</option>
-					<option value="{% url 'homepagecontact' %}">Contacto</option>
+					<option value="{% url 'homepagecontact' %}">{% trans 'Contacto' %}</option>
 				</select>
 			</nav>
 		</div>
