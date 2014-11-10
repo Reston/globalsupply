@@ -1,0 +1,511 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-10 12:24-0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\homepage\forms.py:8
+msgid "Su nombre"
+msgstr ""
+
+#: .\apps\homepage\forms.py:10
+msgid "Su número de teléfono"
+msgstr ""
+
+#: .\apps\homepage\forms.py:11
+msgid "Empresa a la que representa"
+msgstr ""
+
+#: .\apps\homepage\forms.py:12
+msgid "De origen"
+msgstr ""
+
+#: .\templates\base.html:50
+msgid "Idioma:"
+msgstr ""
+
+#: .\templates\base.html:72 .\templates\base.html.py:84
+#: .\templates\base.html:102
+msgid "Inicio"
+msgstr ""
+
+#: .\templates\base.html:74 .\templates\base.html.py:85
+#: .\templates\base.html:104 .\templates\homepage\quienesomos.html:19
+msgid "Quiénes Somos"
+msgstr ""
+
+#: .\templates\base.html:76 .\templates\base.html.py:86
+#: .\templates\base.html:106 .\templates\homepage\index.html:65
+msgid "Productos"
+msgstr ""
+
+#: .\templates\base.html:80 .\templates\base.html.py:110
+msgid "Contacto"
+msgstr ""
+
+#: .\templates\admin\import_export\base.html:11
+msgid "Home"
+msgstr ""
+
+#: .\templates\admin\import_export\change_list_export.html:5
+#: .\templates\admin\import_export\change_list_import_export.html:6
+#: .\templates\admin\import_export\export.html:8
+#: .\templates\admin\import_export\export.html:12
+msgid "Export"
+msgstr ""
+
+#: .\templates\admin\import_export\change_list_import.html:5
+#: .\templates\admin\import_export\change_list_import_export.html:5
+#: .\templates\admin\import_export\import.html:8
+#: .\templates\admin\import_export\import.html:12
+msgid "Import"
+msgstr ""
+
+#: .\templates\admin\import_export\export.html:34
+#: .\templates\admin\import_export\import.html:57
+msgid "Submit"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:19
+msgid ""
+"Below is a preview of data to be imported. If you are satisfied with the "
+"results, click 'Confirm import'"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:22
+msgid "Confirm import"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:31
+msgid "This importer will import the following fields: "
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:65
+msgid "Errors"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:73
+msgid "Line number"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:82
+msgid "Preview"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:97
+msgid "New"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:99
+msgid "Skipped"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:101
+msgid "Delete"
+msgstr ""
+
+#: .\templates\admin\import_export\import.html:103
+msgid "Update"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:35
+msgid "Nombre:"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:41 .\templates\homepage\index.html:49
+msgid "Correo Electrónico:"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:47
+msgid "Teléfono:"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:53
+msgid "Empresa:"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:59
+msgid "País:"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:65
+msgid "Breve descripción de su proyecto:"
+msgstr ""
+
+#: .\templates\homepage\contacto.html:77
+msgid "Información de contacto"
+msgstr ""
+
+#: .\templates\homepage\index.html:26
+msgid "Servicio, Confianza y Satisfacción"
+msgstr ""
+
+#: .\templates\homepage\index.html:55
+msgid "¡GRACIAS POR SUSCRIBIRTE A NUESTRO BOLETINES E INFORMACIÓN!"
+msgstr ""
+
+#: .\templates\homepage\index.html:84
+msgid "Ver marcas de productos"
+msgstr ""
+
+#: .\templates\homepage\index.html:92 .\templates\productos\categoria.html:21
+msgid "Marcas"
+msgstr ""
+
+#: .\templates\homepage\index.html:108
+msgid "Últimas noticias"
+msgstr ""
+
+#: .\templates\homepage\index.html:121
+msgid "Leer más"
+msgstr ""
+
+#: .\templates\homepage\index.html:126
+msgid "Ver todas las noticias"
+msgstr ""
+
+#: .\templates\homepage\index.html:146
+msgid "Regresar arriba"
+msgstr ""
+
+#: .\templates\homepage\quienesomos.html:20
+msgid ""
+"Global supply import & export inc. es una empresa dedicada a la venta de "
+"repuestos de excelente calidad para maquinaria pesada como:"
+msgstr ""
+
+#: .\templates\homepage\quienesomos.html:28
+msgid "Así como también para vehículos livianos tales como:"
+msgstr ""
+
+#: .\templates\homepage\quienesomos.html:39
+msgid ""
+"Contamos con el apoyo incondicional de nuestros proveedores los cuales "
+"suplen y dan respuesta de forma inmiediata a nuestras necesidades, para "
+"poder curbir la demanda de nuestros clientes, así como también el servicio "
+"de delivery hacia el warehouse de su preferencia."
+msgstr ""
+
+#: .\templates\homepage\quienesomos.html:51
+msgid "Historia"
+msgstr ""
+
+#: .\templates\homepage\quienesomos.html:52
+msgid ""
+"La compañia que hoy es llamada \"Global Supply import & export inc\" fue "
+"creada en el año 2009, luego de estudiar la necesidad existente en el "
+"mercado de alguien que fuera capaz de suplir la demanda actual de repuestos "
+"de maquinaria pesada y vehículos livianos."
+msgstr ""
+
+#: .\templates\productos\categoria.html:8
+msgid "Categorías de servicios y productos - Global Supply"
+msgstr ""
+
+#: .\templates\productos\categoria.html:23
+msgid "Eliga la categoría en la que desea buscar los productos disponibles."
+msgstr ""
+
+#: .\templates\productos\categoria.html:34
+msgid "Ver todas las marcas "
+msgstr ""
+
+#: .\templates\productos\producto_detalle.html:23
+msgid "«Volver"
+msgstr ""
+
+#: .\templates\productos\producto_detalle.html:42
+msgid "Código:"
+msgstr ""
+
+#: .\templates\productos\producto_detalle.html:47
+msgid "Precio:"
+msgstr ""
+
+#: .\templates\productos\producto_detalle.html:51
+msgid "Tipo:"
+msgstr ""
+
+#: .\templates\productos\producto_detalle.html:54
+msgid "Existencia:"
+msgstr ""
+
+#: .\templates\productos\producto_detalle.html:58
+msgid "Producto no disponible"
+msgstr ""
+
+#: .\templates\productos\tipos.html:10
+#, python-format
+msgid "Lista de producto de categoria %(categoria.titulo)s - Global Supply"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:17
+msgid "Written by"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:21
+#, python-format
+msgid "Show all %(author)s's entries"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:23
+msgctxt "on date"
+msgid "on"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:25
+msgid "Written on"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:35
+msgid "in"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:38
+#, python-format
+msgid "Show all entries in %(category)s"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:46
+msgid "Last update on"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:78
+#, python-format
+msgid "%(percent)s%% of %(object)s still remains to read."
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:80
+msgid "Continue reading"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:92
+#: .\templates\zinnia\base.html:31
+msgid "Tags"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:95
+#, python-format
+msgid "Show all entries tagged by %(tag)s"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:98
+msgid "No tags"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:104
+msgid "Short url"
+msgstr ""
+
+#: .\templates\zinnia\_entry_detail_base.html:106
+#, python-format
+msgid "Short URL to %(object)s"
+msgstr ""
+
+#: .\templates\zinnia\base.html:16
+msgid "RSS Feed of latest entries"
+msgstr ""
+
+#: .\templates\zinnia\base.html:17
+msgid "RSS Feed of latest discussions"
+msgstr ""
+
+#: .\templates\zinnia\base.html:27
+msgid "Categories"
+msgstr ""
+
+#: .\templates\zinnia\base.html:35 .\templates\zinnia\skeleton.html:46
+msgid "Recent entries"
+msgstr ""
+
+#: .\templates\zinnia\base.html:40
+msgid "Popular entries"
+msgstr ""
+
+#: .\templates\zinnia\base.html:44
+#: .\templates\zinnia\tags\archives_entries_link.html:2
+msgid "Archives"
+msgstr ""
+
+#: .\templates\zinnia\base.html:49
+msgid "Tools"
+msgstr ""
+
+#: .\templates\zinnia\base.html:53 .\templates\zinnia\base.html.py:54
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\zinnia\base.html:60 .\templates\zinnia\base.html.py:61
+msgid "Post an entry"
+msgstr ""
+
+#: .\templates\zinnia\base.html:68 .\templates\zinnia\base.html.py:69
+msgid "Log out"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:22
+msgid "RSS Feed of discussions on"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:24
+msgid "RSS Feed of comments on"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:26
+msgid "RSS Feed of pingbacks on"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:28
+msgid "RSS Feed of trackbacks on"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:47
+msgid "Next entry"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:61
+msgid "Previous entry"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:75
+msgid "Related entries"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:89
+msgid "Similar entries"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:95
+msgid "Comments"
+msgstr ""
+
+#: .\templates\zinnia\entry_detail_base.html:114
+#: .\templates\zinnia\entry_detail_base.html:115
+msgid "Edit the entry"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:4
+msgid "Latest entries for"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:4
+msgid "the category"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:4
+msgid "the tag"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:4
+msgid "the author"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:6
+msgid "page"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:11 .\templates\zinnia\entry_list.html:14
+#: .\templates\zinnia\entry_list.html:17
+msgid "RSS Feed"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:21
+msgid "Category"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:21
+msgid "Tag"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:21
+msgid "Author"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:23
+msgid "Page"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:31
+#, python-format
+msgid "Category archives: %(category)s"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:38
+#, python-format
+msgid "Tag archives: %(tag)s"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:42
+#, python-format
+msgid "Author archives: %(author)s"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:51
+msgid "No entries yet."
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:70 .\templates\zinnia\entry_list.html:71
+msgid "Edit the category"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:77 .\templates\zinnia\entry_list.html:78
+msgid "Edit the tag"
+msgstr ""
+
+#: .\templates\zinnia\entry_list.html:84 .\templates\zinnia\entry_list.html:85
+msgid "Edit the author"
+msgstr ""
+
+#: .\templates\zinnia\entry_search.html:4
+#: .\templates\zinnia\entry_search.html:6
+#: .\templates\zinnia\entry_search.html:16
+msgid "Search results for"
+msgstr ""
+
+#: .\templates\zinnia\entry_search.html:10
+msgid "RSS Feed of search result of"
+msgstr ""
+
+#: .\templates\zinnia\entry_search.html:24
+#, python-format
+msgid "%(entry_count)s entry found"
+msgid_plural "%(entry_count)s entries found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\templates\zinnia\entry_search.html:34
+msgid "Nothing found."
+msgstr ""
+
+#: .\templates\zinnia\skeleton.html:26
+msgid "Nuestro Blog"
+msgstr ""
+
+#: .\templates\zinnia\skeleton.html:31
+msgid "Useful links"
+msgstr ""
+
+#: .\templates\zinnia\skeleton.html:34 .\templates\zinnia\skeleton.html:35
+msgid "Blog index"
+msgstr ""
+
+#: .\templates\zinnia\skeleton.html:39 .\templates\zinnia\skeleton.html:40
+msgid "Sitemap"
+msgstr ""
+
+#: .\templates\zinnia\skeleton.html:50
+msgid "Search"
+msgstr ""
