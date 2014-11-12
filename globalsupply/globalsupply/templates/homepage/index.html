@@ -69,10 +69,22 @@ Global Supply - Página de inicio
 			</div>
 			<div class="listaProductos">
 				<ul class="listaItem">
-					{% for p in productos %}
+					{% for n in productosNuevos %}
+					<li class="item">
+						<div class="new">{% trans 'Nuevo' %}</div>
+						<a href="{{ n.get_absolute_url }}">
+							<img src="{{ MEDIA_URL }}/{{ imagenesNuevos|getimagen:n.id}}" alt="{{n.titulo}} imagen"/>
+							<div class="descripItem">
+								<div class="marcaItem">Marca: {{n.tipo.categoria}}</div>
+								<div class="tituloItem">{{n.titulo}}</div>
+							</div>
+						</a>
+					</li>	
+					{% endfor %}
+					{% for p in productosDestacados %}
 					<li class="item">
 						<a href="{{ p.get_absolute_url }}">
-							<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:p.id}}" alt="{{p.titulo}} imagen"/>
+							<img src="{{ MEDIA_URL }}/{{ imagenesDestacados|getimagen:p.id}}" alt="{{p.titulo}} imagen"/>
 							<div class="descripItem">
 								<div class="marcaItem">Marca: {{p.tipo.categoria}}</div>
 								<div class="tituloItem">{{p.titulo}}</div>

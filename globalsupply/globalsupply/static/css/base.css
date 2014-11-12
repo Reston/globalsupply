@@ -149,8 +149,7 @@ nav li a:hover{
 }
 .navFooter li a{
  	text-decoration: none;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #000;
+	color: #000;
 }
 nav span{
 	color: #0A77BD;
@@ -159,6 +158,11 @@ nav span{
 	text-align: center;
 	font-size: 1.2em;
 	text-transform: uppercase;	
+}
+.navFooter ul{
+	background: #BABABA;
+	padding: 5px;
+	opacity: .9;
 }
 /*slider*/
 .sliderPosition{

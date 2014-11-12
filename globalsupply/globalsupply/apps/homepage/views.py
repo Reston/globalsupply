@@ -23,15 +23,27 @@ def index(request):
 	#slider
 	slideritem = SliderItem.objects.all()[:5]
 	#productos e imagenes de sus producto
-	productos = Producto.objects.filter(destacado=True).order_by('creado_en')[:6]
-	imagenes = ImgProductos.objects.filter(producto__in=list(productos))
+	productosNuevos = Producto.objects.all().order_by('creado_en')[:3]
+	print productosNuevos
+	productosDestacados = Producto.objects.filter(destacado=True).order_by('creado_en')[:3]
+	imagenesNuevos = ImgProductos.objects.filter(producto__in=list(productosNuevos))
+	imagenesDestacados = ImgProductos.objects.filter(producto__in=list(productosDestacados))
 	categoria = Categoria.objects.filter(destacado_index=True)[:5]
 	#entradas de blog
 	entradas = Entry.objects.order_by('-creation_date')[:3]
 	for ent in entradas:
 		quitar_html= nltk.clean_html(ent.content) 
 		ent.content =  quitar_html[:65]
-	ctx = {'slideritem': slideritem, 'productos': productos, 'imagenes': imagenes, 'categoria': categoria, 'form':form, 'newsletter':newsletter, 'entradas': entradas}
+	ctx = {
+	'slideritem': slideritem,
+	'productosDestacados': productosDestacados,
+	'productosNuevos': productosNuevos,
+	'imagenesDestacados': imagenesDestacados,
+	'imagenesNuevos': imagenesNuevos,
+	'categoria': categoria, 'form':form,
+	'newsletter':newsletter,
+	'entradas': entradas
+	}
 	return render_to_response('homepage/index.html', ctx, context_instance=RequestContext(request))
 
 def about(request):

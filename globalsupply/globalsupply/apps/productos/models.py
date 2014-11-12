@@ -2,7 +2,7 @@
 from django.db import models
 from tinymce.models import HTMLField
 from django.core.urlresolvers import reverse
-from decimal import Decimal
+#from decimal import Decimal
 from django.template import defaultfilters
 
 
@@ -10,13 +10,17 @@ class Categoria(models.Model):
 	titulo = models.CharField(max_length=50, help_text='Hasta 50 caracteres y solamente alfanuméricos', unique=True)
 	breve_descripcion = models.CharField(max_length=140, help_text='Hasta 140 caracteres')
 	destacado_index = models.BooleanField(default=False, help_text='Para salir en el index. Max 5 destacados.')
-	imagen = models.ImageField(upload_to='imgcategorias')
+	imagen = models.ImageField(upload_to='imgcategorias', blank=True)
 	creado_en = models.DateTimeField(auto_now_add=True, editable=False)
 	modificado_en = models.DateTimeField(auto_now=True)
 	slug = models.SlugField(max_length=50, verbose_name="Url", help_text="No modificar auto-generado")
 
 	def __unicode__(self):
 		return self.titulo
+
+	class Meta:
+		verbose_name = 'Marca'
+		verbose_name_plural = 'Marcas'
 
 	def save(self, *args, **kwargs):
 		self.slug = defaultfilters.slugify(self.titulo)
@@ -30,13 +34,17 @@ class Tipo(models.Model):
 	categoria = models.ForeignKey(Categoria)
 	titulo = models.CharField(max_length=50, help_text='Hasta 50 caracteres y solamente alfanuméricos', unique=True)
 	breve_descripcion = models.CharField(max_length=140, help_text='Hasta 140 caracteres')
-	imagen = models.ImageField(upload_to='imgtipos')
+	imagen = models.ImageField(upload_to='imgtipos', blank=True)
 	creado_en = models.DateTimeField(auto_now_add=True, editable=False)
 	modificado_en = models.DateTimeField(auto_now=True)
 	slug = models.SlugField(max_length=50, verbose_name="Url", help_text="No modificar auto-generado")
 
 	def __unicode__(self):
 		return unicode(self.titulo)+' - '+unicode(self.categoria)
+
+	class Meta:
+		verbose_name = 'Tipo de repuesto'
+		verbose_name_plural = 'Tipos de repuestos'
 
 	def save(self, *args, **kwargs):
 		self.slug = defaultfilters.slugify(self.titulo)

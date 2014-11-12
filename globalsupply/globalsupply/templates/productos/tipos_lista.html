@@ -1,10 +1,15 @@
 {% load custom_filters %}
+{% load staticfiles %}
 {% load endless %}
 {% paginate tipos %}
 {% for tipo in tipos %}
 <div class="productoContainer">
 	<a href="{{ tipo.get_absolute_url }}">
-		<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
+		{% if tipo.imagen %}
+			<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
+		{% else %}
+			<img src="{% static 'img/logoblancopeq.png' %}" alt="No existe imagen por el momento">
+		{% endif %}
 		<div class="productoTitulo">{{ tipo.titulo }}</div>
 		<div class="productoDescripcion">
 			{{ tipo.breve_descripcion }}

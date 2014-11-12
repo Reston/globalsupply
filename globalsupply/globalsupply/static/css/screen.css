@@ -173,11 +173,11 @@ margin: 5px;
 display: block;
 color: #FFF;
 padding: 2px 0;
-background-color: #E65B51;
+background-color: #40A2DA;
 width: 30%;
 text-align: center;
 float: right;
-margin-top: 16px;}
+/*margin-top: 16px;*/}
 .zinnia .continue-reading a:after{content:"\21d2"}.zinnia .entry-footer p{margin:0}.zinnia .entry-tags strong{padding-left:1.5em;background:transparent url('../img/tags.png?1317027277') no-repeat scroll}.zinnia .entry-shorturl strong{padding-left:1.5em;background:transparent url('../img/shorturl.png?1317027277') no-repeat scroll}.zinnia .entry-comments strong{padding-left:1.5em;background:transparent url('../img/comments.png?1317027277') no-repeat scroll}.zinnia .entry-widgets p,.zinnia .entry-widgets ul{padding-left:1.5em}.zinnia .entry-widgets,.zinnia #comments,.zinnia #pingbacks,.zinnia #trackbacks{padding-left: 27px;padding-top:1em;border-top:1px solid #eee}.zinnia #comments li,.zinnia #pingbacks li,.zinnia #trackbacks li{list-style:none;padding:1em 1em 0 1em;margin-bottom:1em;border:1px solid #eee}.zinnia #comments li{min-height:90px}.zinnia #comments img{float:left;margin-right:1em;padding:0.5em;border:1px solid #eee}.zinnia 
 .post-author img.photo{background-color:#e9e9f3}.zinnia p.comment-info,.zinnia p.trackback-info,.zinnia p.pingback-info{font-weight:bold;font-size:1.2em;margin-bottom:0.5em}.zinnia .anchor-link{font-weight:normal;font-size:1em}.zinnia ul.paginator{padding:0;font-size:1.2em}.zinnia ul.paginator li{list-style:none;display:inline-block;padding:0 0.5em;margin-right:0.3em;border:solid 1px #eee}.zinnia ul.paginator li.current{color:white;background-color:#85C8BB}.zinnia ul.paginator li.page:hover{background-color:#85C8BB}
 .zinnia ul.paginator li.page:hover a{color:white}.zinnia a[rel=archives]{text-transform:capitalize}

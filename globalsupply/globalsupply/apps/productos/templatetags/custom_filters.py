@@ -9,4 +9,4 @@ def getimagen(list, mid):
 	for i in range(list.count()):
 		if list[i].producto_id == mid:
 			return list[i].imagen
-	return
+	return False

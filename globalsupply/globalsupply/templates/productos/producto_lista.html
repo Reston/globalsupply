@@ -1,10 +1,15 @@
 {% load custom_filters %}
+{% load staticfiles %}
 {% load endless %}
 {% paginate productos %}
 {% for producto in productos %}
 	<a href="{{ producto.get_absolute_url }}">
 		<div class="productoContainer">
-			<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:producto.id}}" alt="{{producto.titulo}} imagen">
+			{% if imagenes|getimagen:producto.id %}
+				<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:producto.id}}" alt="{{producto.titulo}} imagen">
+			{% else %}
+				<img src="{% static 'img/logoblancopeq.png' %}" alt="No existe imagen por el momento">
+			{% endif %}
 			<div class="productoTitulo">{{ producto.titulo }}</div>
 			<div class="productoDescripcion">
 				{{ producto.descripcion_corta }}

@@ -1,4 +1,7 @@
 @charset 'utf-8';
+.wrapper{
+	padding: 0;
+}
 h1{
 	font-size: 4em;
 	color:  #0A77BD;
@@ -20,6 +23,7 @@ form{
 	width: 49%;
 	margin-left: 40px;
 	vertical-align: top;
+	text-align: center;
 }
 .twitterlogoContacto, .facebookContacto, .googleplusContacto, .skypeContacto, .porTelefonoContacto::before, .porCorreoContacto::before{
 	background: url(../../img/contactoicons.png) no-repeat;
