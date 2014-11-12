@@ -8,7 +8,7 @@
 		{% if tipo.imagen %}
 			<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
 		{% else %}
-			<img src="{% static 'img/logoblancopeq.png' %}" alt="No existe imagen por el momento">
+			<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
 		{% endif %}
 		<div class="productoTitulo">{{ tipo.titulo }}</div>
 		<div class="productoDescripcion">

@@ -25,6 +25,10 @@ h1{
 	margin: 0;
 	text-align: center;
 }
+.busquedalink{
+	text-align: right;
+	display: block;
+}
 .back-link {
 	float: left;
 }

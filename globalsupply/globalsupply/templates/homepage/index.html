@@ -76,7 +76,7 @@ Global Supply - Página de inicio
 							{% if imagenesNuevos|getimagen:n.id %}
 								<img src="{{ MEDIA_URL }}/{{ imagenesNuevos|getimagen:n.id}}" alt="{{n.titulo}} imagen"/>
 							{% else %}
-								<img src="{% static 'img/logoblancopeq.png' %}" alt="No existe imagen por el momento">
+								<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
 							{% endif %}
 							<div class="descripItem">
 								<div class="marcaItem">Marca: {{n.tipo.categoria}}</div>
@@ -91,7 +91,7 @@ Global Supply - Página de inicio
 							{% if imagenesDestacados|getimagen:p.id %}
 								<img src="{{ MEDIA_URL }}/{{ imagenesDestacados|getimagen:p.id}}" alt="{{p.titulo}} imagen"/>
 							{% else %}
-								<img src="{% static 'img/logoblancopeq.png' %}" alt="No existe imagen por el momento">
+								<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
 							{% endif %}
 							<div class="descripItem">
 								<div class="marcaItem">Marca: {{p.tipo.categoria}}</div>

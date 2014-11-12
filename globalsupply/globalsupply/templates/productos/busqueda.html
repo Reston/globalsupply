@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load custom_filters %}
+{% block head %} 
+<meta name="description" content="{% trans 'Búsqueda de productos de Global Supply' %}">
+{% endblock%}
+{% block title %}
+{% trans 'Búsqueda de productos - Global Supply' %}
+{% endblock%}
+{% block css%}
+<link rel="stylesheet" href="{% static 'css/productos/producto.css' %}">
+<link rel="stylesheet" href="{% static 'css/productos/busqueda.css' %}">
+{% endblock %}
+{% block js %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+{% endblock %}
+{% block contenido %}
+<section class="busqueda">
+	<div class="wrapper">
+		<div class="tituloh2"><h1>{% trans 'Búsqueda avanzada' %}</h1></div>
+		<div class="busquedabox">
+			<p>Puede realizar busquedas por marca, tipo, código y nombre del producto.</p>
+			<form action="#productoslista" method="GET">	{% csrf_token %}
+				<input class="textbuscar" type="text" name="busqueda">
+				<input class="botonbuscar"type="submit" value="Buscar">
+			</form>
+		</div>
+		<div class="listaProductos">
+			<table id="tablaDetalles">
+				<thead>
+					<tr>
+						<th>{% trans 'Marca' %}</th>
+						<th>{% trans 'Tipo' %}</th>
+						<th>{% trans 'Nombre' %}</th>
+						<th>{% trans 'Código' %}</th>
+						<th>{% trans 'Existencia' %}</th>
+						<th>{% trans 'Descipción' %}</th>
+						<th>{% trans 'Precio' %}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for producto in producto_pagina %}
+					<tr>
+						<td data-title="{% trans 'Marca' %}">{{producto.tipo.categoria.titulo}}</td>
+						<td data-title="{% trans 'Tipo' %}">{{producto.tipo.titulo}}</td>
+						<td data-title="{% trans 'Nombre' %}">{{producto.titulo}}</td>
+						<td data-title="{% trans 'Código' %}">{{producto.codigo}}</td>
+						<td data-title="{% trans 'Existencia' %}">{{producto.existencia}}</td>
+						<td data-title="{% trans 'Descipción' %}">{{producto.descripcion_corta}}</td>
+						<td data-title="{% trans 'Precio' %}">{{producto.precio}}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="pagination">
+			<span class="step-links">
+				{% if producto_pagina.has_previous %}
+					{% if request.GET.busqueda %}
+					<a href="?page={{ producto_pagina.previous_page_number }}&busqueda={{request.GET.busqueda}}">{% trans 'Anterior' %}</a>
+					{% else %}
+					<a href="?page={{ producto_pagina.previous_page_number }}">{% trans 'Anterior' %}</a>
+					{% endif %}
+				{% endif %}		
+
+				<span class="current">
+					Página {{ producto_pagina.number }} de {{ producto_pagina.paginator.num_pages }}. 
+				</span>
+
+				{% if producto_pagina.has_next %}
+					{% if request.GET.busqueda %}
+					<a href="?page={{ producto_pagina.next_page_number }}&busqueda={{request.GET.busqueda}}">{% trans 'Siguiente' %}</a>
+					{% else %}
+					<a href="?page={{ producto_pagina.next_page_number }}">{% trans 'Siguiente' %}</a>
+					{% endif %}
+				{% endif %}
+			</span>
+		</div>
+	</div>
+</section>
+{% endblock %}

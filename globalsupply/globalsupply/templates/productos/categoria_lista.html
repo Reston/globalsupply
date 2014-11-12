@@ -8,7 +8,7 @@
 			{% if categoria.imagen %}
 				<img src="{{ MEDIA_URL }}/{{ categoria.imagen }}" alt="{{categoria.titulo}} imagen">
 			{% else %}
-				<img src="{% static 'img/logoblancopeq.png' %}" alt="No existe imagen por el momento">
+				<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
 			{% endif %}
 			<div class="graybox">
 				<div class="categoriaTitulo">{{ categoria.titulo }}</div>

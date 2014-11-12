@@ -4,7 +4,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from .models import Categoria, Producto, ImgProductos, Tipo
 from django.shortcuts import get_object_or_404
-
+from django.db.models import Q
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def detalle_producto(request, slug):
 	producto = get_object_or_404(Producto, slug=slug)
@@ -67,3 +68,22 @@ def mostrar_categoria(request, template='productos/categoria.html', page_templat
 			mensaje = "No se han encontrado resuldos para "+palabra_busqueda
 	ctx = {'categorias': categorias, 'page_template': page_template, 'mensaje': mensaje}
 	return render_to_response(template, ctx, context_instance=RequestContext(request))
+
+
+def busqueda_avanzada(request):
+	palabra_busqueda = request.GET.get('busqueda', '')
+	productos = Producto.objects.all()
+	if (palabra_busqueda):
+		productos = Producto.objects.filter(Q(titulo__icontains=palabra_busqueda) | Q(codigo__icontains=palabra_busqueda) | Q(tipo__titulo__icontains=palabra_busqueda) | Q(tipo__categoria__titulo__icontains=palabra_busqueda))
+	paginator = Paginator(productos, 25) # Show 25 contacts per page
+	page = request.GET.get('page')
+	try:
+		producto_pagina = paginator.page(page)
+	except PageNotAnInteger:
+		# If page is not an integer, deliver first page.
+		producto_pagina = paginator.page(1)
+	except EmptyPage:
+		# If page is out of range (e.g. 9999), deliver last page of results.
+		producto_pagina = paginator.page(paginator.num_pages)
+	ctx = {'producto_pagina': producto_pagina, 'productos': productos}
+	return render_to_response('productos/busqueda.html', ctx, context_instance=RequestContext(request))

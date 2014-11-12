@@ -56,7 +56,7 @@ class Tipo(models.Model):
 class Producto(models.Model):
 	tipo = models.ForeignKey(Tipo)
 	titulo = models.CharField(max_length=25, help_text='Hasta 25 caracteres y solamente alfanuméricos')
-	codigo = models.CharField(max_length=20)
+	codigo = models.CharField(max_length=20, unique=True)
 	existencia = models.IntegerField()
 	descripcion_corta = models.CharField(max_length=140, help_text='Hasta 140 caracteres')
 	descripcion = HTMLField()	
