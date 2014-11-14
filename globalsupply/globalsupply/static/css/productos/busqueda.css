@@ -29,7 +29,15 @@ td{
 	padding-top: 10px;
 }
 @media only screen and (max-width: 800px) {
-	
+	h1 {
+		font-size: 2em;
+	}
+	input{
+		width: 45%;
+	}
+	input[type="submit"] {
+		width: 30%;
+	}
 	/* Force table to not be like tables anymore */
 	#tablaDetalles table, 
 	#tablaDetalles thead, 

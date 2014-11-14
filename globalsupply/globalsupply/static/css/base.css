@@ -348,6 +348,7 @@ footer{
 @media screen and (max-width: 1020px){
 	.wrapper{
 		width: 100%;
+		padding: 0;
 	}
 	.wrapperFooter{
 		width: 100%;
@@ -369,7 +370,7 @@ footer{
 		width: 100%;
 		font-size: 2em;
 		padding: 5px;
-		margin-top: 1em;
+		margin-top: 0;
 		margin-bottom: 4px;
 		background: #0068A1;
 		color: #FFF;
