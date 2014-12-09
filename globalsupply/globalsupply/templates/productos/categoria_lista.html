@@ -2,9 +2,26 @@
 {% load staticfiles %}
 {% load endless %}
 {% paginate categorias %}
-{% for categoria in categorias %}
-<div class="categoriaContainer">
-	<a href="{{ categoria.get_absolute_url }}">			
+{% ifequal LANGUAGE_CODE "en" %}
+	{% for categoria in categorias %}
+	<div class="categoriaContainer">
+		<a href="{{ categoria.get_absolute_url }}">
+			{% if categoria.imagen %}
+				<img src="{{ MEDIA_URL }}/{{ categoria.imagen }}" alt="{{categoria.titulo}} imagen">
+			{% else %}
+				<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
+			{% endif %}
+			<div class="graybox">
+				<div class="categoriaTitulo">{{ categoria.titul_en }}</div>
+				<div class="categoriaDescripcion">{{ categoria.breve_descripcion_en }}</div>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+{% else %}
+	{% for categoria in categorias %}
+	<div class="categoriaContainer">
+		<a href="{{ categoria.get_absolute_url }}">			
 			{% if categoria.imagen %}
 				<img src="{{ MEDIA_URL }}/{{ categoria.imagen }}" alt="{{categoria.titulo}} imagen">
 			{% else %}
@@ -12,9 +29,10 @@
 			{% endif %}
 			<div class="graybox">
 				<div class="categoriaTitulo">{{ categoria.titulo }}</div>
-				<div class="categoriaDescripcion">{{ categoria.breve_descripcion }}	</div>
+				<div class="categoriaDescripcion">{{ categoria.breve_descripcion }}</div>				
 			</div>
-	</a>
-</div>
-{% endfor %}
+		</a>
+	</div>
+	{% endfor %}
+{% endifequal %}
 {% show_more %}

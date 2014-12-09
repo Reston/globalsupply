@@ -2,19 +2,39 @@
 {% load staticfiles %}
 {% load endless %}
 {% paginate tipos %}
-{% for tipo in tipos %}
-<div class="productoContainer">
-	<a href="{{ tipo.get_absolute_url }}">
-		{% if tipo.imagen %}
-			<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
-		{% else %}
-			<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
-		{% endif %}
-		<div class="productoTitulo">{{ tipo.titulo }}</div>
-		<div class="productoDescripcion">
-			{{ tipo.breve_descripcion }}
-		</div>
-	</a>
-</div>
-{% endfor %}
+
+{% ifequal LANGUAGE_CODE "en" %}
+	{% for tipo in tipos %}
+	<div class="productoContainer">
+		<a href="{{ tipo.get_absolute_url }}">
+			{% if tipo.imagen %}
+				<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
+			{% else %}
+				<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
+			{% endif %}
+			<div class="productoTitulo">{{ tipo.titulo_en }}</div>
+			<div class="productoDescripcion">
+				{{ tipo.breve_descripcion_en }}
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+{% else %}
+	{% for tipo in tipos %}
+	<div class="productoContainer">
+		<a href="{{ tipo.get_absolute_url }}">
+			{% if tipo.imagen %}
+				<img src="{{ MEDIA_URL }}/{{ tipo.imagen }}" alt="{{tipo.titulo}} imagen">
+			{% else %}
+				<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
+			{% endif %}
+			<div class="productoTitulo">{{ tipo.titulo }}</div>
+			<div class="productoDescripcion">
+				{{ tipo.breve_descripcion }}
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+{% endifequal %}
+
 {% show_more %}

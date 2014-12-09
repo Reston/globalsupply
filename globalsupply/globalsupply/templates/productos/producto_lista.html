@@ -2,19 +2,37 @@
 {% load staticfiles %}
 {% load endless %}
 {% paginate productos %}
-{% for producto in productos %}
-	<a href="{{ producto.get_absolute_url }}">
-		<div class="productoContainer">
-			{% if imagenes|getimagen:producto.id %}
-				<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:producto.id}}" alt="{{producto.titulo}} imagen">
-			{% else %}
-				<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
-			{% endif %}
-			<div class="productoTitulo">{{ producto.titulo }}</div>
-			<div class="productoDescripcion">
-				{{ producto.descripcion_corta }}
+{% ifequal LANGUAGE_CODE "en" %}
+	{% for producto in productos %}
+		<a href="{{ producto.get_absolute_url }}">
+			<div class="productoContainer">
+				{% if imagenes|getimagen:producto.id %}
+					<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:producto.id}}" alt="{{producto.titulo}} imagen">
+				{% else %}
+					<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
+				{% endif %}
+				<div class="productoTitulo">{{ producto.titulo_en }}</div>
+				<div class="productoDescripcion">
+					{{ producto.descripcion_corta_en }}
+				</div>
 			</div>
-		</div>
-	</a>	
-{% endfor %}
+		</a>	
+	{% endfor %}
+{% else %}
+	{% for producto in productos %}
+		<a href="{{ producto.get_absolute_url }}">
+			<div class="productoContainer">
+				{% if imagenes|getimagen:producto.id %}
+					<img src="{{ MEDIA_URL }}/{{ imagenes|getimagen:producto.id}}" alt="{{producto.titulo}} imagen">
+				{% else %}
+					<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
+				{% endif %}
+				<div class="productoTitulo">{{ producto.titulo }}</div>
+				<div class="productoDescripcion">
+				{{ producto.descripcion_corta }}
+				</div>
+			</div>
+		</a>	
+	{% endfor %}
+{% endifequal %}
 {% show_more %}

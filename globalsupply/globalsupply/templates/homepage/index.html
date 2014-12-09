@@ -65,7 +65,7 @@ Global Supply - Página de inicio
 				<h2>{% trans 'Productos' %}</h2>
 			</div>
 			<div class="descripcionIndex">
-				<p>Texto</p>
+				<!-- <p>Texto</p> -->
 			</div>
 			<div class="listaProductos">
 				<ul class="listaItem">
@@ -79,7 +79,10 @@ Global Supply - Página de inicio
 								<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
 							{% endif %}
 							<div class="descripItem">
-								<div class="marcaItem">Marca: {{n.tipo.categoria}}</div>
+								<div class="marcaItem">
+									{% trans 'Marca:' %}
+									{{n.tipo.categoria}}
+								</div>
 								<div class="tituloItem">{{n.titulo}}</div>
 							</div>
 						</a>
@@ -94,7 +97,10 @@ Global Supply - Página de inicio
 								<img src="{% static 'img/defecto.jpg' %}" alt="No existe imagen por el momento">
 							{% endif %}
 							<div class="descripItem">
-								<div class="marcaItem">Marca: {{p.tipo.categoria}}</div>
+								<div class="marcaItem">
+									{% trans 'Marca:' %}
+									{{p.tipo.categoria}}
+								</div>
 								<div class="tituloItem">{{p.titulo}}</div>
 							</div>
 						</a>

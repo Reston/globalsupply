@@ -8,7 +8,9 @@ from django.template import defaultfilters
 
 class Categoria(models.Model):
 	titulo = models.CharField(max_length=50, help_text='Hasta 50 caracteres y solamente alfanuméricos', unique=True)
+	titulo_en = models.CharField(max_length=50, help_text='ENGLISH TITLE - Hasta 50 caracteres y solamente alfanuméricos', unique=True)
 	breve_descripcion = models.CharField(max_length=140, help_text='Hasta 140 caracteres')
+	breve_descripcion_en = models.CharField(max_length=140, help_text='ENGLISH DESCRIPTION - Hasta 140 caracteres')
 	destacado_index = models.BooleanField(default=False, help_text='Para salir en el index. Max 5 destacados.')
 	imagen = models.ImageField(upload_to='imgcategorias', blank=True)
 	creado_en = models.DateTimeField(auto_now_add=True, editable=False)
@@ -33,7 +35,9 @@ class Categoria(models.Model):
 class Tipo(models.Model):
 	categoria = models.ForeignKey(Categoria)
 	titulo = models.CharField(max_length=50, help_text='Hasta 50 caracteres y solamente alfanuméricos', unique=True)
+	titulo_en = models.CharField(max_length=50, help_text='ENGLISH TITLE - Hasta 50 caracteres y solamente alfanuméricos', unique=True)
 	breve_descripcion = models.CharField(max_length=140, help_text='Hasta 140 caracteres')
+	breve_descripcion_en = models.CharField(max_length=140, help_text='ENGLISH DESCRIPTION - Hasta 140 caracteres')
 	imagen = models.ImageField(upload_to='imgtipos', blank=True)
 	creado_en = models.DateTimeField(auto_now_add=True, editable=False)
 	modificado_en = models.DateTimeField(auto_now=True)
@@ -56,10 +60,13 @@ class Tipo(models.Model):
 class Producto(models.Model):
 	tipo = models.ForeignKey(Tipo)
 	titulo = models.CharField(max_length=25, help_text='Hasta 25 caracteres y solamente alfanuméricos')
+	titulo_en = models.CharField(max_length=25, verbose_name="title english", help_text='ENGLISH TITLE - Hasta 25 caracteres y solamente alfanuméricos')
 	codigo = models.CharField(max_length=20, unique=True)
 	existencia = models.IntegerField()
 	descripcion_corta = models.CharField(max_length=140, help_text='Hasta 140 caracteres')
-	descripcion = HTMLField()	
+	descripcion_corta_en = models.CharField(max_length=140, verbose_name="short description english", help_text='ENGLISH DESCRIPTION - Hasta 140 caracteres')
+	descripcion = HTMLField()
+	descripcion_en = HTMLField(verbose_name="description english")
 	precio = models.DecimalField(max_digits=30, decimal_places=2)
 	creado_en = models.DateTimeField(auto_now_add=True, editable=False)
 	modificado_en = models.DateTimeField(auto_now=True)

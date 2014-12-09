@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     'globalsupply.apps.homepage',
     'globalsupply.apps.productos',
     'globalsupply.apps.slider',
+    'tinymce',
     'tagging',
     'mptt',
     'zinnia',

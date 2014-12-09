@@ -10,3 +10,4 @@ class CategoriaForm(forms.ModelForm):
 class ProductoForm(forms.ModelForm):
 	titulo = forms.RegexField(regex=r'^[\w ]+$', error_messages={'invalid': ("Caracteres invalidos.")})
 	descripcion = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 20}))
+	descripcion_en = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 20}))

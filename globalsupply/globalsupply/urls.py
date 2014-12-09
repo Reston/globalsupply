@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
-from sitemaps import StaticViewSitemap
+from sitemaps import StaticViewSitemap, CategoriaSitemap, TipoSitemap, ProductoSitemap
 from django.http import HttpResponse
 #from django.conf.urls.i18n import i18n_patterns
 # Uncomment the next two lines to enable the admin:
@@ -8,7 +8,10 @@ from django.contrib import admin
 admin.autodiscover()
 sitemaps = {
 	'pages': StaticViewSitemap,
-	}
+	'categoriasm': CategoriaSitemap,
+	'tiposm': TipoSitemap,
+	'productossm': ProductoSitemap,
+}
 
 urlpatterns = patterns('',
 	# Examples:

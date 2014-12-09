@@ -40,7 +40,8 @@ def index(request):
 	'productosNuevos': productosNuevos,
 	'imagenesDestacados': imagenesDestacados,
 	'imagenesNuevos': imagenesNuevos,
-	'categoria': categoria, 'form':form,
+	'categoria': categoria,
+	'form':form,
 	'newsletter':newsletter,
 	'entradas': entradas
 	}

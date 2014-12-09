@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Página no disponible{% endblock %}
+{% block css%}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/homepage/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/500and404.css' %}">
+{% endblock%}
+{% block contenido %}
+<section class="fondoerror">
+	<div class="error500">
+		Error 500: Error en el servidor.
+	</div>
+</section>
+{% endblock %}

@@ -8,25 +8,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-10 12:23-0430\n"
+"POT-Creation-Date: 2014-12-09 12:11-0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\apps\homepage\forms.py:8
 msgid "Su nombre"
-msgstr ""
+msgstr "Name"
 
 #: .\apps\homepage\forms.py:10
 msgid "Su número de teléfono"
-msgstr ""
+msgstr "Phone Number"
 
 #: .\apps\homepage\forms.py:11
 msgid "Empresa a la que representa"
-msgstr ""
+msgstr "Company Name"
 
 #: .\apps\homepage\forms.py:12
 msgid "De origen"
@@ -34,25 +35,30 @@ msgstr ""
 
 #: .\templates\base.html:50
 msgid "Idioma:"
-msgstr ""
+msgstr "Language"
 
 #: .\templates\base.html:72 .\templates\base.html.py:84
 #: .\templates\base.html:102
 msgid "Inicio"
-msgstr ""
+msgstr "Home"
 
 #: .\templates\base.html:74 .\templates\base.html.py:85
 #: .\templates\base.html:104 .\templates\homepage\quienesomos.html:19
 msgid "Quiénes Somos"
-msgstr ""
+msgstr "About us"
 
 #: .\templates\base.html:76 .\templates\base.html.py:86
 #: .\templates\base.html:106 .\templates\homepage\index.html:65
 msgid "Productos"
-msgstr ""
+msgstr "Products"
 
-#: .\templates\base.html:80 .\templates\base.html.py:110
+#: .\templates\base.html:80 .\templates\base.html.py:88
+#: .\templates\base.html:110
 msgid "Contacto"
+msgstr "Contact"
+
+#: .\templates\base.html:83
+msgid "Menú"
 msgstr ""
 
 #: .\templates\admin\import_export\base.html:11
@@ -122,73 +128,83 @@ msgstr ""
 
 #: .\templates\homepage\contacto.html:35
 msgid "Nombre:"
-msgstr ""
+msgstr "Name:"
 
 #: .\templates\homepage\contacto.html:41 .\templates\homepage\index.html:49
 msgid "Correo Electrónico:"
-msgstr ""
+msgstr "E-Mail:"
 
 #: .\templates\homepage\contacto.html:47
 msgid "Teléfono:"
-msgstr ""
+msgstr "Phone Number:"
 
 #: .\templates\homepage\contacto.html:53
 msgid "Empresa:"
-msgstr ""
+msgstr "Company:"
 
 #: .\templates\homepage\contacto.html:59
 msgid "País:"
-msgstr ""
+msgstr "Country:"
 
 #: .\templates\homepage\contacto.html:65
-msgid "Breve descripción de su proyecto:"
+msgid "Mensaje:"
 msgstr ""
 
 #: .\templates\homepage\contacto.html:77
 msgid "Información de contacto"
-msgstr ""
+msgstr "Contact Information"
 
 #: .\templates\homepage\index.html:26
 msgid "Servicio, Confianza y Satisfacción"
-msgstr ""
+msgstr "Service, trust and satisfaction"
 
 #: .\templates\homepage\index.html:55
 msgid "¡GRACIAS POR SUSCRIBIRTE A NUESTRO BOLETINES E INFORMACIÓN!"
-msgstr ""
+msgstr "THANKS FOR SUSCRIBING TO OUR NEWSLETTER!"
 
-#: .\templates\homepage\index.html:84
+#: .\templates\homepage\index.html:74
+msgid "Nuevo"
+msgstr "New"
+
+#: .\templates\homepage\index.html:83 .\templates\homepage\index.html:101
+msgid "Marca:"
+msgstr "Brand:"
+
+#: .\templates\homepage\index.html:110
 msgid "Ver marcas de productos"
-msgstr ""
+msgstr "See products brands"
 
-#: .\templates\homepage\index.html:92 .\templates\productos\categoria.html:21
+#: .\templates\homepage\index.html:118 .\templates\productos\categoria.html:21
 msgid "Marcas"
-msgstr ""
+msgstr "Brands"
 
-#: .\templates\homepage\index.html:108
+#: .\templates\homepage\index.html:134
 msgid "Últimas noticias"
-msgstr ""
+msgstr "Latest news"
 
-#: .\templates\homepage\index.html:121
+#: .\templates\homepage\index.html:147
 msgid "Leer más"
-msgstr ""
+msgstr "Continue reading"
 
-#: .\templates\homepage\index.html:126
+#: .\templates\homepage\index.html:152
 msgid "Ver todas las noticias"
-msgstr ""
+msgstr "View all news"
 
-#: .\templates\homepage\index.html:146
+#: .\templates\homepage\index.html:172
 msgid "Regresar arriba"
-msgstr ""
+msgstr "Back to top"
 
 #: .\templates\homepage\quienesomos.html:20
 msgid ""
 "Global supply import & export inc. es una empresa dedicada a la venta de "
 "repuestos de excelente calidad para maquinaria pesada como:"
 msgstr ""
+"Global supply import & export inc. is a company specialized in selling "
+"excellent quality replacement parts for heavy machinery such as:"
 
 #: .\templates\homepage\quienesomos.html:28
 msgid "Así como también para vehículos livianos tales como:"
-msgstr ""
+msgstr "As well as light vehicles such as:"
 
 #: .\templates\homepage\quienesomos.html:39
 msgid ""
@@ -197,10 +213,13 @@ msgid ""
 "poder curbir la demanda de nuestros clientes, así como también el servicio "
 "de delivery hacia el warehouse de su preferencia."
 msgstr ""
+"We have the full support of our suppliers who provide and give immediate "
+"response to our needs, to meet our clients’ demand, as well as delivery "
+"service to the warehouse of your choice."
 
 #: .\templates\homepage\quienesomos.html:51
 msgid "Historia"
-msgstr ""
+msgstr "History"
 
 #: .\templates\homepage\quienesomos.html:52
 msgid ""
@@ -209,47 +228,137 @@ msgid ""
 "mercado de alguien que fuera capaz de suplir la demanda actual de repuestos "
 "de maquinaria pesada y vehículos livianos."
 msgstr ""
+"The company called today \"Global Supply import & export inc\" was founded "
+"in 2009, after studying the need in the market of someone who would be able "
+"to meet the demand for heavy machinery and light vehicles replacement parts."
+
+#: .\templates\productos\busqueda.html:6
+#, fuzzy
+msgid "Búsqueda de productos de Global Supply"
+msgstr "Services and products category - Global Supply"
+
+#: .\templates\productos\busqueda.html:9
+#, fuzzy
+msgid "Búsqueda de productos - Global Supply"
+msgstr "Services and products category - Global Supply"
+
+#: .\templates\productos\busqueda.html:21
+#: .\templates\productos\categoria.html:31
+#: .\templates\productos\productos.html:32 .\templates\productos\tipos.html:31
+msgid "Búsqueda avanzada"
+msgstr "Advanced search"
+
+#: .\templates\productos\busqueda.html:23
+msgid "Puede realizar busquedas por marca, tipo, código y nombre del producto."
+msgstr "You can search by brand, type, code and product name."
+
+#: .\templates\productos\busqueda.html:26
+msgid "Buscar"
+msgstr "Search"
+
+#: .\templates\productos\busqueda.html:33
+#: .\templates\productos\busqueda.html:46
+#: .\templates\productos\busqueda.html:60
+#, fuzzy
+msgid "Marca"
+msgstr "Brands"
+
+#: .\templates\productos\busqueda.html:34
+#: .\templates\productos\busqueda.html:47
+#: .\templates\productos\busqueda.html:61
+#, fuzzy
+msgid "Tipo"
+msgstr "Type:"
+
+#: .\templates\productos\busqueda.html:35
+#: .\templates\productos\busqueda.html:48
+#: .\templates\productos\busqueda.html:62
+#, fuzzy
+msgid "Nombre"
+msgstr "Name:"
+
+#: .\templates\productos\busqueda.html:36
+#: .\templates\productos\busqueda.html:49
+#: .\templates\productos\busqueda.html:63
+#, fuzzy
+msgid "Código"
+msgstr "Code:"
+
+#: .\templates\productos\busqueda.html:37
+#: .\templates\productos\busqueda.html:50
+#: .\templates\productos\busqueda.html:64
+#, fuzzy
+msgid "Existencia"
+msgstr "stock"
+
+#: .\templates\productos\busqueda.html:38
+#: .\templates\productos\busqueda.html:51
+#: .\templates\productos\busqueda.html:65
+msgid "Descipción"
+msgstr ""
+
+#: .\templates\productos\busqueda.html:39
+#: .\templates\productos\busqueda.html:52
+#: .\templates\productos\busqueda.html:66
+#, fuzzy
+msgid "Precio"
+msgstr "Price:"
+
+#: .\templates\productos\busqueda.html:77
+#: .\templates\productos\busqueda.html:79
+msgid "Anterior"
+msgstr ""
+
+#: .\templates\productos\busqueda.html:89
+#: .\templates\productos\busqueda.html:91
+msgid "Siguiente"
+msgstr ""
 
 #: .\templates\productos\categoria.html:8
 msgid "Categorías de servicios y productos - Global Supply"
-msgstr ""
+msgstr "Services and products category - Global Supply"
 
 #: .\templates\productos\categoria.html:23
 msgid "Eliga la categoría en la que desea buscar los productos disponibles."
-msgstr ""
+msgstr "Choose the category to check products available."
 
-#: .\templates\productos\categoria.html:34
+#: .\templates\productos\categoria.html:35
 msgid "Ver todas las marcas "
-msgstr ""
+msgstr "See all brands"
 
 #: .\templates\productos\producto_detalle.html:23
 msgid "«Volver"
-msgstr ""
+msgstr "«Back"
 
-#: .\templates\productos\producto_detalle.html:42
+#: .\templates\productos\producto_detalle.html:43
+#: .\templates\productos\producto_detalle.html:76
 msgid "Código:"
-msgstr ""
+msgstr "Code:"
 
-#: .\templates\productos\producto_detalle.html:47
+#: .\templates\productos\producto_detalle.html:48
+#: .\templates\productos\producto_detalle.html:81
 msgid "Precio:"
-msgstr ""
+msgstr "Price:"
 
-#: .\templates\productos\producto_detalle.html:51
+#: .\templates\productos\producto_detalle.html:52
+#: .\templates\productos\producto_detalle.html:85
 msgid "Tipo:"
-msgstr ""
+msgstr "Type:"
 
-#: .\templates\productos\producto_detalle.html:54
+#: .\templates\productos\producto_detalle.html:55
+#: .\templates\productos\producto_detalle.html:88
 msgid "Existencia:"
-msgstr ""
+msgstr "stock"
 
-#: .\templates\productos\producto_detalle.html:58
+#: .\templates\productos\producto_detalle.html:59
+#: .\templates\productos\producto_detalle.html:92
 msgid "Producto no disponible"
-msgstr ""
+msgstr "Product not available"
 
 #: .\templates\productos\tipos.html:10
 #, python-format
 msgid "Lista de producto de categoria %(categoria.titulo)s - Global Supply"
-msgstr ""
+msgstr "%(categoria.titulo)s - Global Supply"
 
 #: .\templates\zinnia\_entry_detail_base.html:17
 msgid "Written by"

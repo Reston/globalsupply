@@ -35,38 +35,74 @@ Producto {{ producto.titulo }} - Global Supply
 					</div>
 				</div>
 			</div>
-			<div class="izquierda">
-				<h2 class="tituloh2">{{ producto.titulo }}</h2>
-				<div class="contenedorInfo">
-					<div class="codigo">
-						<div class="codigotext">{% trans 'Código:' %}</div>
-						<div class="codigoproducto">{{ producto.codigo }}</div>
+			{% ifequal LANGUAGE_CODE "en" %}
+				<div class="izquierda">
+					<h2 class="tituloh2">{{ producto.titulo_en }}</h2>
+					<div class="contenedorInfo">
+						<div class="codigo">
+							<div class="codigotext">{% trans 'Código:' %}</div>
+							<div class="codigoproducto">{{ producto.codigo }}</div>
+						</div>	
+						{% if producto.disponible %}
+							<div class="precio">
+								<div class="preciotext">{% trans 'Precio:' %}</div>
+								<div class="numeroprecio">$ {{producto.precio}}</div>
+							</div><!-- Cambiar esto con un templatetag -->
+							<div class="tipo">
+								<div class="tipotext">{% trans 'Tipo:' %}</div>
+								<a href="{{ producto.tipo.get_absolute_url }}">{{ producto.tipo }}</a></div>
+							<div class="existencia">
+								<div class="existenciatext">{% trans 'Existencia:' %}</div>
+								{{producto.existencia}}
+							</div>
+						{% else %}
+							<h3>Precio: <div class="precioTachado">{{ producto.precio }} Bs.</div><div class="nodisponible">{% trans 'Producto no disponible' %}</div></h3>
+							<div class="tipo">Tipo: <a href="#">{{ producto.tipo }}</a></div>						
+						{% endif %}
+					</div>
+					<div class="mini">
+						{{ producto.descripcion_corta_en }}
 					</div>	
-					{% if producto.disponible %}
-						<div class="precio">
-							<div class="preciotext">{% trans 'Precio:' %}</div>
-							<div class="numeroprecio">{{producto.precio}}Bs.</div>
-						</div><!-- Cambiar esto con un templatetag -->
-						<div class="tipo">
-							<div class="tipotext">{% trans 'Tipo:' %}</div>
-							<a href="{{ producto.tipo.get_absolute_url }}">{{ producto.tipo }}</a></div>
-						<div class="existencia">
-							<div class="existenciatext">{% trans 'Existencia:' %}</div>
-							{{producto.existencia}}
-						</div>
-					{% else %}
-						<h3>Precio: <div class="precioTachado">{{ producto.precio }} Bs.</div><div class="nodisponible">{% trans 'Producto no disponible' %}</div></h3>
-						<div class="tipo">Tipo: <a href="#">{{ producto.tipo }}</a></div>						
-					{% endif %}
+					<h3>Descripción</h3>
+					{% autoescape off %}
+						{{ producto.descripcion_en }}
+					{% endautoescape %}				
 				</div>
-				<div class="mini">
-					{{ producto.descripcion_corta }}
-				</div>	
-				<h3>Descripción</h3>
-			{% autoescape off %}
-				{{ producto.descripcion }}
-			{% endautoescape %}				
-				</div>	
+			{% else %}
+				<div class="izquierda">
+					<h2 class="tituloh2">{{ producto.titulo }}</h2>
+					<div class="contenedorInfo">
+						<div class="codigo">
+							<div class="codigotext">{% trans 'Código:' %}</div>
+							<div class="codigoproducto">{{ producto.codigo }}</div>
+						</div>	
+						{% if producto.disponible %}
+							<div class="precio">
+								<div class="preciotext">{% trans 'Precio:' %}</div>
+								<div class="numeroprecio">$ {{producto.precio}}</div>
+							</div><!-- Cambiar esto con un templatetag -->
+							<div class="tipo">
+								<div class="tipotext">{% trans 'Tipo:' %}</div>
+								<a href="{{ producto.tipo.get_absolute_url }}">{{ producto.tipo }}</a></div>
+							<div class="existencia">
+								<div class="existenciatext">{% trans 'Existencia:' %}</div>
+								{{producto.existencia}}
+							</div>
+						{% else %}
+							<h3>Precio: <div class="precioTachado">{{ producto.precio }} Bs.</div><div class="nodisponible">{% trans 'Producto no disponible' %}</div></h3>
+							<div class="tipo">Tipo: <a href="#">{{ producto.tipo }}</a></div>						
+						{% endif %}
+					</div>
+					<div class="mini">
+						{{ producto.descripcion_corta }}
+					</div>	
+					<h3>Descripción</h3>
+					{% autoescape off %}
+						{{ producto.descripcion }}
+					{% endautoescape %}				
+				</div>
+			{% endifequal %}
+
 		</section>
 		<div class="face">
 		<div class="fb-comments" data-href="http://www.activa24ca.com{{ request.path }}" data-width="960" data-num-posts="10"></div>
