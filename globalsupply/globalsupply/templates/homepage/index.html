@@ -28,12 +28,21 @@ Global Supply - Página de inicio
 			<div class="flexslider">
 				<ul class="slides">
 				{% if slideritem %}
-				{% for item in slideritem %}
-					<li  data-thumb="{{ MEDIA_URL }}/{{item.image}}">
-						<img src="{{ MEDIA_URL }}/{{item.image}}" alt="{{item.title}}">
-						<p class="flex-caption">{{item.texto_banner|safe}}</p>
-					</li>
-				{% endfor %}
+				{% ifequal LANGUAGE_CODE "en" %}
+					{% for item in slideritem %}
+						<li  data-thumb="{{ MEDIA_URL }}/{{item.image}}">
+							<img src="{{ MEDIA_URL }}/{{item.image}}" alt="{{item.title}}">
+							<p class="flex-caption">{{item.texto_banner_en|safe}}</p>
+						</li>
+					{% endfor %}
+				{% else %}
+					{% for item in slideritem %}
+						<li  data-thumb="{{ MEDIA_URL }}/{{item.image}}">
+							<img src="{{ MEDIA_URL }}/{{item.image}}" alt="{{item.title}}">
+							<p class="flex-caption">{{item.texto_banner|safe}}</p>
+						</li>
+					{% endfor %}
+				{% endifequal %}
 				{% endif %}
 				</ul>
 			</div>
