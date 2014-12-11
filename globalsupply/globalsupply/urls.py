@@ -32,6 +32,7 @@ urlpatterns = patterns('',
 	(r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
 	url(r'^blog/', include('zinnia.urls')),
 	(r'^i18n/', include('django.conf.urls.i18n')),
+	(r'^tinymce/', include('tinymce.urls')), 
 )
 
 if settings.DEBUG:
